@@ -1,0 +1,354 @@
+%%-----------------------------------------------------%%
+%% This file may act as the main file of your article. %%
+%% Please uncomment one of the following lines.        %%
+%%-----------------------------------------------------%%
+
+%% \documentclass[CM,GP]{degruyter-crelle}       %% Equations numbered as (1), (2) etc.
+\documentclass[SecEq,CM,GP]{degruyter-crelle} %% Equations numbered as (1.1), (1.2) etc.
+
+%% Do not alter the following line.
+\firstpage{}\volume{}\volumeyear{}\copyrightyear{}\doiyear{}\doi{}\received{XXX}\revised{XXX}
+% \firstpage{}\volume{}\volumeyear{}\copyrightyear{}\doiyear{}\doi{}\received{XXX}\revised{XXX}
+
+
+
+% \title[Shortened title for the running title]{Title}
+\title[FLT derived in a direct computation]{Fermat's Last Theorem derived in a direct computation}
+
+\author{Pawel J.}{Piskorz}{}{Krakow}
+% \author{Firstname}{Lastname}{}{City}
+
+\contact{DPS, Krakowska 55, 31-066, Krakow, Poland}{paweljanpiskorz@gmail.com}
+% \contact{Department, university, street, zip code, city, country}{e-mail}
+
+% \researchsupported{Please insert information concerning research grant support here.}
+
+\researchsupported{The author received funds from PFRON (State Fund of Rehabilitation of Handicapped Persons) allowing the purchase of a laptop computer
+on which this publication has been written.}
+
+
+%% Define theorem-like environments as usual: 
+
+\theoremstyle{plain}
+ \newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition} 
+ \newtheorem{remark}[theorem]{Remark}
+
+
+\begin{document}
+
+\begin{abstract}
+    We propose a procedure which allows to compute the only acceptable natural
+    exponents of the positive integers $X, Y, Z$
+    in the equation of the Fermat's Last Theorem. 
+    We use the approach similar to the one applied in
+    computing of the expected value and the standard deviation of number of successes in Bernoulli 
+    trials presented by Kenneth S.~Miller.
+\end{abstract}
+
+%% \tableofcontents %% Just for papers exceeding 50 pages.
+
+
+\section{Introduction}\label{sec:intro}
+
+We write the equation from the Fermat's Last Theorem~\cite{FLT_Wikipedia}
+\begin{equation}
+\label{eq:Fermat}
+X^N + Y^N = Z^N
+\end{equation}
+in which
+$X, Y, Z \in \mathbb{Z_{+}}$ are integers
+greater than zero
+and $N \in \mathbb{N}$ is a natural number.
+
+Without loss of generality we rewrite Equation~(\ref{eq:Fermat}) as
+\begin{equation}
+  \label{eq:FermatGeneralEquation}
+  (x + Mpx)^{N} qr + (y + Lqy)^{N} rp = (z + Krz)^{N} pq
+  \end{equation}
+with $p, q, r \in \mathbb{R}$
+and $M, L, K \in \mathbb{N}$\@.
+Now we set $q=1$ and $r=1$
+with $Y = y + Ly$ and $Z = z + Kz$
+obtaining
+\begin{equation}
+\label{eq:FermatEquation}
+(x + Mpx)^N + Y^N p = Z^N p
+\end{equation}
+with $X=x + Mpx$.
+We have introduced a real number parameter $p \in \mathbb{R}$ the value of which will 
+be later set to 1\@.
+The number $M \in \mathbb{N}$ is a natural number.
+With such assumptions we must have $x \in \{ \frac{1}{M+1}, \frac{2}{M+1}, \frac{3}{M+1}, \ldots \}$
+in order for the variable $X$ to assume integer values.
+
+E.g.:
+
+if $M=1$, $p=1$ $x \in \{ \frac{1}{2}, \frac{2}{2}, \frac{3}{2}, \ldots \}$
+ then $X = \{\frac{1}{2} + 1 \cdot \frac{1}{2}, \frac{2}{2} + 1 \cdot \frac{2}{2}, \frac{3}{2} + 1 \cdot \frac{3}{2}, \ldots \}$
+what gives 
+$X \in \{1, 2, 3, \ldots \}$;
+
+if $M=7$, $p=1$ $x \in \{ \frac{1}{8}, \frac{2}{8}, \frac{3}{8}, \ldots \}$
+ then $X = \{\frac{1}{8} + 7 \cdot \frac{1}{8}, \frac{2}{8} + 7 \cdot \frac{2}{8}, \frac{3}{8} + 7 \cdot \frac{3}{8}, \ldots \}$
+what gives again
+$X \in \{1, 2, 3, \ldots \}$\@.
+
+We always arrive at $X \in \{1, 2, 3, \ldots \}$ for any natural number $M$ and $p=1$,
+i.e.~we have ensured that always $X \in \{1, 2, 3, \ldots \}$ no matter which natural number $M$ we take
+into account. Similarly we can ensure that $Y$ and $Z$ are also integers greater than zero
+appropriately choosing natural number parameters $L$ and $K$ and appropriately real numbers $q$ and $r$\@.
+
+
+\section{Computations}\label{sec:computations}
+
+We take partial derivative of both sides of Equation~(\ref{eq:FermatEquation}) with respect to $p$ 
+\begin{equation}
+\label{eq:FermatEquationTakingDerivative}
+\frac{\partial (x + Mpx)^N}{\partial p} + \frac{\partial Y^N p}{\partial p} = \frac{\partial Z^N p}{\partial p}
+\end{equation}
+We compute the partial derivtive of $(x + Mpx)^N$ as follows
+\begin{eqnarray}
+\frac{\partial (x + Mpx)^N}{\partial p}
+=
+N(x + Mpx)^{N-1}  \frac{\partial (x + Mpx)}{\partial p}   \\ \nonumber
+=
+N(x + Mpx)^{N-1} Mx 
+=
+NM  (Mp+1)^{N-1} x^{N-1}  x     \\  \nonumber
+=
+NM  (Mp+1)^{N-1}  x^N
+\end{eqnarray}
+% If we set p=1 then we receive
+We receive a new equation
+\begin{equation}
+NM  (Mp+1)^{N-1}  x^N + Y^{N} = Z^{N}
+\end{equation}
+in which we can set the prameter $p=1$ obtaining
+\begin{equation}
+\label{eq:AfterPartialDerivativeWith_p_as_one}
+NM  (M+1)^{N-1}  x^N + Y^{N} = Z^{N}
+\end{equation}
+If we set $p=1$ in Equation~(\ref{eq:FermatEquation}) on the other hand we obtain
+\begin{equation}
+\label{eq:two_to_compare}
+(M+1)^{N} x^{N} + Y^N  = Z^N
+\end{equation}
+We compare the coefficients at the term with $x^{N}$ in Equations~(\ref{eq:AfterPartialDerivativeWith_p_as_one}) 
+and~(\ref{eq:two_to_compare})
+receiving a constraint equation for $N$
+\begin{equation}
+\label{eq:constraint_for_N}
+NM(M+1)^{N}/(M+1) = (M+1)^{N}
+\end{equation}
+and therefrom we obtain the values of exponent $N$ as a function of $M$
+\begin{equation}
+\label{eq:constraintNM}
+N = \frac{M+1}{M}
+\end{equation}
+We find the values of $N(M)$ as
+\begin{eqnarray}
+\label{eq:constraint}
+N(M=1) = \frac{2}{1} = 2    \\ \nonumber
+N(M=2) = \frac{3}{2}        \\ \nonumber
+N(M=3) = \frac{4}{3}        \\ \nonumber
+N(M=4) = \frac{5}{4}        \\ \nonumber
+\vdots                      \\ \nonumber
+N(M=\infty) = 1             \\ \nonumber
+\end{eqnarray}
+We can state that with our assumption of having $N \in \mathbb{N}$ we have to reject
+all $N(M)$ solutions above which are not natural numbers.
+
+Quite similarly we can arrive at the formulas for $N$ below
+\begin{equation}
+  \label{eq:constraintNL}
+  N = \frac{L+1}{L}
+\end{equation}
+and
+\begin{equation}
+   \label{eq:constraintNK}
+  N = \frac{K+1}{K}
+\end{equation}
+what gives the constraint equations for the functions $N(L)$ and $N(K)$ similar to the constraints in Equations~\ref{eq:constraint}\@.
+
+
+
+\section{Conclusion}\label{sec:conclusion}
+
+We have started with the Equation~(\ref{eq:Fermat}) with assumption that $X, Y, Z$ are positive 
+integers and $N$ is a natural number.
+We see from our computations
+that this equation is valid for natural exponents only if the exponents in it are either 
+$N=1$ or $N=2$ what is in agreement with the Fermat's Last Theorem.
+
+
+% \acknowl{Insert acknowledgments of the assistance of colleagues or similar notes of appreciation here.}
+
+
+\acknowl{
+    This article is in honor of American mathematician Kenneth~S.\ Mil\-ler. Due to his 
+    technique of computing the expected value and the standard deviation of number of 
+    successes in Bernoulli trials~\cite{book_by_Miller}
+    we were able to obtain our results. 
+    Author would also like to thank an
+    anonymous student without whom it would take longer to
+    write this paper and who suggested placing the number $p$ next to symbols $Y^{N}$ and $Z^{N}$
+    in Equation~(\ref{eq:FermatEquation}) while the author was working on the universal expression 
+    of the natural number $X$ using rational number $x$ and a real parameter $p$ for partial differentiation.    
+}
+
+
+
+
+%-------------------------------------------------------------------------%
+% GENERAL INSTRUCTIONS                                                    %
+% Please keep formatting macros to a minimum.                             %
+% Avoid redundant source code such as unused definitions or longer        %
+% passages of comments (% or {comment}).                                  %
+% Do not worry about bad page breaks, etc. and avoid adding extra space   %
+% and using glue to improve the appearance of the manuscript.             %
+% Please ensure that the material has been carefully proofread and that   %
+% all files used are made available to the editors/publisher.             %
+%-------------------------------------------------------------------------%
+
+%-------------------------------------------------------------------------%
+% PACKAGES                                                                %
+% Missing packages can be downloaded at www.tug.org/ctan.html.            %
+%-------------------------------------------------------------------------%
+
+%-------------------------------------------------------------------------%
+% MULTILINE EQUATIONS                                                     %
+% For numbered/unnumbered multiline equations use align/align* instead of %
+% eqnarray. (Other available environments for multiline displays are      %
+% gather, multline, aligned, split, etc.)                                 %
+%-------------------------------------------------------------------------%
+
+%-------------------------------------------------------------------------%
+% QED SYMBOL                                                              %
+% The \qedhere command forces the QED symbol to go on the present line,   %
+% which might be useful if the last part of a proof environment is, e.g., %
+% a displayed equation or list environment.                               %
+%-------------------------------------------------------------------------%
+
+%-------------------------------------------------------------------------%
+% SOME MORE MATH                                                          %
+% -- Avoid blank lines before or after a display, unless you really want  %
+%    to start a new paragraph.                                            %
+% -- Use equation*, gather* or the bracket pair \[ and \] instead of      %
+%    double dollar signs $$.                                              %
+% -- Use \operatorname{...} for math operators that are not predefined    %
+%    or define new operators with \DeclareMathOperator. lim-like          %
+%    operators can be defined with \DeclareOperator*                      %
+% -- Use \quad for spacings in displayed formulas.                        %
+% -- Use \substack{... \\ ...} for multiline subscripts on, e.g., sums.   %
+%-------------------------------------------------------------------------%
+
+%-------------------------------------------------------------------------%
+% ENUMERATIONS                                                            %
+% By default, the labels of first level enumerations are (i), (ii), etc.  %
+% You may change them to become, e.g., A., B. etc., using an optional     %
+% argument: \begin{enumerate}[A.]                                         %
+%-------------------------------------------------------------------------%
+
+%-------------------------------------------------------------------------%
+% FIGURES AND TABLES                                                      %
+% You may include a figure writing                                        %
+% \begin{figure}[t]                                                       % 
+%   \includegraphics[width=.8\textwidth]{xxx.yyy}                         %
+%   \caption{Caption.}\label{fig:zzz}                                     %
+% \end{figure}                                                            %
+% A table is included similar using the table environment.                %
+% Sub-captions are created as follows:                                    %
+% \begin{figure}[t]                                                       %
+%   \subfloat[Caption a]{\includegraphics[width=.45\textwidth]{...}}      %
+%   \hfill                                                                %
+%   \subfloat[Caption b]{\includegraphics[width=.45\textwidth]{...}}      %
+%   \caption{Caption.}                                                    %
+% \end{figure}                                                            %
+%-------------------------------------------------------------------------%
+
+%-------------------------------------------------------------------------%
+% QUOTATION MARKS                                                         %
+% Double quotation marks are produced using `` and ''. The opening quote  %
+% then looks like a superscript 66 and the closing quote like a           %
+% superscript 99.                                                         %
+%-------------------------------------------------------------------------%
+
+%-------------------------------------------------------------------------%
+% HYPHEN VS. DASH                                                         %
+% The hyphen (-) is used for compound words like $n$-dimensional.         %
+% (Don't write things like $n-$dimensional!)                              %
+% The en-dash (--) is used for number ranges and it can stand for `and',  %
+% e.g., between two names: ``Various generalizations of the               %
+% Cauchy--Schwarz inequality are presented on pages 63--67.''             %
+% To partition a sentence one may use the em-dash (---) with no space     %
+% on either side; we prefer the en-dash with a blank on both sides.       %
+% The mathematical minus sign is produced by a single - within            %
+% mathematics mode.                                                       %
+%-------------------------------------------------------------------------%
+
+%-------------------------------------------------------------------------%
+% REFERENCES                                                              %
+% Use \label and \ref for all cross-references to equations, figures,     %
+% tables, sections, subsections, etc.                                     %
+%-------------------------------------------------------------------------%
+
+%-------------------------------------------------------------------------%
+% BIBLIOGRAPHY                                                            %
+% References should be collected at the end of the paper and numbered in  %
+% alphabetical order of the authors' names. Titles of journals should be  %
+% abbreviated as in Mathematical Reviews. Please do not use small caps    %
+% for the names of the authors. The preferred style is shown in the       %
+% examples below.                                                         %
+% Refer to the bibliography entries using \cite commands.                 %
+% Using BibTeX, you simply have to add the names of your databases as     %
+%   \bibliography{mydatabase}                                             %
+% The file crelle.bst then ensures the correct style.                     %
+%-------------------------------------------------------------------------%
+
+\begin{thebibliography}{9}
+
+% \bibitem{article}
+% \textit{T.~Angel} and \textit{I.~E.~Shparlinski},
+% Article in a journal, J. reine angew. Math. \textbf{647} (2010), 123--156.
+
+% \bibitem{preprint}
+% \textit{C.~Bonnaf\'e},
+% Preprint, preprint 2008, \url{http://arxiv.org/abs/0805.4100}.
+
+\bibitem{FLT_Wikipedia}
+\textit{Fermat's Last Theorem},
+\url{https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem}.
+
+
+
+% https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem
+
+
+
+
+% \bibitem{proceedings}
+% \textit{P. Brooksbank},
+% Article in a conference proceedings,
+% in: Finite geometries (Pingree Park 2004), Oxford University Press, Oxford (2006), 1--16.
+
+% \bibitem{phdthesis}
+% \textit{J.~D.~King},
+% Unpublished dissertation,
+% Ph.D. thesis, University of Cambridge, 1995.
+
+% \bibitem{book}
+% \textit{F. Sukochev}, \textit{S. Lord} and \textit{D. Zanin},
+% Book, 2nd ed., De Gruyter, Berlin 2012.
+
+\bibitem{book_by_Miller}
+\textit{Kenneth S.~Miller},
+Engineering Mathematics, Dover Publications, Inc.\ 1956.
+
+
+
+
+\end{thebibliography}
+
+\end{document}
