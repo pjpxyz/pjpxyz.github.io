@@ -1,0 +1,325 @@
+% \documentclass[oupthm]{CUP-JNL-BCM}%
+\documentclass[12pt]{article}
+% \usepackage{amssymb}
+
+%%%% Packages
+\usepackage{graphicx}
+\usepackage{multicol,multirow}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathrsfs}
+%%\usepackage{amsthm}
+\usepackage{rotating}
+\usepackage{appendix}
+\usepackage[numbers]{natbib}
+\RequirePackage{hyperref}
+\usepackage{hyperref}
+
+% \theoremstyle{oupplain}
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{lemma}[theorem]{Lemma}
+% \theoremstyle{oupdefinition}
+% \newtheorem{definition}{Definition}[section]
+% \theoremstyle{oupremark}
+% \newtheorem{remark}[theorem]{Remark}
+% \newtheorem{example}[theorem]{Example}
+% \theoremstyle{oupproof}
+% \newtheorem{proof}{Proof}
+
+\numberwithin{equation}{section}
+
+
+% \articletype{RESEARCH ARTICLE}
+% \jname{Canadian Mathematical Society}
+%\artid{20}
+% \jyear{2020}
+%\jvol{4}
+%\jissue{1}
+%\jdoi{2190-8567}
+%\raggedbottom
+
+
+\begin{document}
+
+% \begin{Frontmatter}
+
+\title{On Fermat's Diophantine equation and its only allowed natural exponents}
+
+
+% \title[Newton Complementary Duals of \textup{f}-Ideals]{Newton complementary duals of $f$-ideals\thanks{Sample text for title footnote.}}
+
+
+
+
+\author{Pawel Jan Piskorz}
+
+\maketitle
+
+
+% \author{Adam Van Tuyl}
+
+% \authormark{P.J.~Piskorz}
+
+
+% \address{\orgname{DPS}, \orgaddress{\street{Krakowska 55}, \state{31-066 Krakow, Poland}} \email{paweljanpiskorz@gmail.com}}
+
+
+
+% \address{\orgname{DPS}, \orgaddress{\street{Hamilton}, \state{ON}, \postcode{L8S 4L8}}\email{budds2@mcmaster.ca}, \email{sjbudd3@gmail.com}, \email{vantuyl@math.mcmaster.ca}}
+
+
+% \keywords[2020 Mathematics Subject Classification]{11D41}
+
+% \keywords{Fermat's Diophantine equation, Fermat's Last Theorem}
+
+% \abstract{A square-free monomial ideal $I$ of $k[x_1,\ldots,x_n]$ is
+% said to be an $f$-ideal if the facet complex and non-face complex
+% associated with $I$ have the same $f$-vector.    We show that
+% $I$ is an $f$-ideal if and only if its Newton complementary dual
+% $\hat{I}$ is also an $f$-ideal.  Because of this duality,
+% previous results about some classes of $f$-ideals can be extended
+% to a much larger class of $f$-ideals.   An interesting by-product of our
+% work is an alternative formulation of the Kruskal-Katona theorem
+% for $f$-vectors of simplicial complexes.}
+
+
+\abstract{We propose a procedure which allows to compute the only acceptable natural
+exponents of the positive integers $X, Y, Z$
+in the Fermat's Diophantine equation. 
+We use the approach similar to the one applied in
+computing of the expected value and the standard deviation of number of successes in Bernoulli 
+trials presented by Kenneth S.~Miller.}
+
+
+
+
+% \end{Frontmatter}
+
+
+\section{Introduction}\label{sec:intro}
+
+We write the equation from the Fermat's Last Theorem~\cite{FLT_Wikipedia}
+\begin{equation}
+\label{eq:Fermat}
+X^N + Y^N = Z^N
+\end{equation}
+in which
+$X, Y, Z \in \mathbb{Z_{+}}$ are integers
+greater than zero
+and $N \in \mathbb{N}$ is a natural number.
+
+Without loss of generality we rewrite Equation~(\ref{eq:Fermat}) as
+\begin{equation}
+  \label{eq:FermatGeneralEquation}
+  (x + Mpx)^{N} qr + (y + Lqy)^{N} rp = (z + Krz)^{N} pq
+  \end{equation}
+with $p, q, r \in \mathbb{R}$
+and $M, L, K \in \mathbb{N}$\@.
+Now we set $q=1$ and $r=1$
+with $Y = y + Ly$ and $Z = z + Kz$
+obtaining
+\begin{equation}
+\label{eq:FermatEquation}
+(x + Mpx)^N + Y^N p = Z^N p
+\end{equation}
+with $X=x + Mpx$.
+We have introduced a real number parameter $p \in \mathbb{R}$ the value of which will 
+be later set to 1\@.
+The number $M \in \mathbb{N}$ is a natural number.
+With such assumptions we must have $x \in \{ \frac{1}{M+1}, \frac{2}{M+1}, \frac{3}{M+1}, \ldots \}$
+in order for the variable $X$ to assume integer values.
+
+% E.g.:
+
+% if $M=1$, $p=1$, $x \in \{ \frac{1}{2}, \frac{2}{2}, \frac{3}{2}, \ldots \}$
+%  then $X = \{\frac{1}{2} + 1 \cdot \frac{1}{2}, \frac{2}{2} + 1 \cdot \frac{2}{2}, \frac{3}{2} + 1 \cdot \frac{3}{2}, \ldots \}$
+% what gives 
+% $X \in \{1, 2, 3, \ldots \}$;
+
+% if $M=7$, $p=1$, $x \in \{ \frac{1}{8}, \frac{2}{8}, \frac{3}{8}, \ldots \}$
+%  then $X = \{\frac{1}{8} + 7 \cdot \frac{1}{8}, \frac{2}{8} + 7 \cdot \frac{2}{8}, \frac{3}{8} + 7 \cdot \frac{3}{8}, \ldots \}$
+% what gives again
+% $X \in \{1, 2, 3, \ldots \}$\@.
+
+We always arrive at $X \in \{1, 2, 3, \ldots \}$ for any natural number $M$ and $p=1$,
+i.e.~we have ensured that always $X \in \{1, 2, 3, \ldots \}$ no matter which natural number $M$ we take
+into account. It is because for $p=1$, $X = x + Mx = x(M+1)$\@.
+
+Similarly we can ensure that $Y$ and $Z$ are also integers greater than zero
+appropriately choosing the natural number parameters $L$ and $K$ and appropriately real numbers $q$ and~$r$\@.
+
+
+
+\section{Computations}\label{sec:computations}
+
+We take partial derivative of both sides of Equation~(\ref{eq:FermatEquation}) with respect to $p$ 
+\begin{equation}
+\label{eq:FermatEquationTakingDerivative}
+\frac{\partial (x + Mpx)^N}{\partial p} + \frac{\partial Y^N p}{\partial p} = \frac{\partial Z^N p}{\partial p}
+\end{equation}
+We compute the partial derivtive of $(x + Mpx)^N$ as follows
+\begin{eqnarray}
+\frac{\partial (x + Mpx)^N}{\partial p}
+=
+N(x + Mpx)^{N-1}  \frac{\partial (x + Mpx)}{\partial p}   \\ \nonumber
+=
+N(x + Mpx)^{N-1} Mx 
+=
+NM  (Mp+1)^{N-1} x^{N-1}  x     \\  \nonumber
+=
+NM  (Mp+1)^{N-1}  x^N
+\end{eqnarray}
+% If we set p=1 then we receive
+We receive a new equation
+\begin{equation}
+NM  (Mp+1)^{N-1}  x^N + Y^{N} = Z^{N}
+\end{equation}
+in which we can set the prameter $p=1$ obtaining
+\begin{equation}
+\label{eq:AfterPartialDerivativeWith_p_as_one}
+NM  (M+1)^{N-1}  x^N + Y^{N} = Z^{N}
+\end{equation}
+If we set $p=1$ in Equation~(\ref{eq:FermatEquation}) on the other hand we obtain
+\begin{equation}
+\label{eq:two_to_compare}
+(M+1)^{N} x^{N} + Y^N  = Z^N
+\end{equation}
+We compare the coefficients at the term with $x^{N}$ in Equations~(\ref{eq:AfterPartialDerivativeWith_p_as_one}) 
+and~(\ref{eq:two_to_compare})
+receiving a constraint equation for $N$
+\begin{equation}
+\label{eq:constraint_for_N}
+NM(M+1)^{N}/(M+1) = (M+1)^{N}
+\end{equation}
+and therefrom we obtain the values of exponent $N$ as a function of $M$
+\begin{equation}
+  \label{eq:constraintNM}
+  N(M) = \frac{M+1}{M}
+\end{equation}
+Quite similarly we can arrive at the formulas for $N$ as a function of $L$
+\begin{equation}
+  \label{eq:constraintNL}
+  N(L) = \frac{L+1}{L}
+\end{equation}
+and for $N$ as a function of $K$
+\begin{equation}
+   \label{eq:constraintNK}
+  N(K) = \frac{K+1}{K}
+\end{equation}
+% what gives the constraint equations for the functions $N(L)$ and $N(K)$ similar to the constraints in Equations~\ref{eq:constraint}
+% for the function $N(M)$\@.
+
+
+
+\section{Conclusion}\label{sec:conclusion}
+
+We have started with the Equation~(\ref{eq:Fermat}) with assumption that $X, Y, Z$ are positive 
+integers and $N$ is a natural number.
+We received the system of three constraint E\-qu\-a\-tions~(\ref{eq:constraintNM}), (\ref{eq:constraintNL}) and (\ref{eq:constraintNK})
+for the four unknowns $M, L, K$ and the number $N$\@.
+It means that one unknown among the four ones must assume two integer values. We see below that it is the variable $N$\@.
+
+For $N(M)$ we have
+\begin{eqnarray}
+\label{eq:constraint}
+N(M=1) = \frac{2}{1} = 2    \\ \nonumber
+N(M=2) = \frac{3}{2}        \\ \nonumber
+N(M=3) = \frac{4}{3}        \\ \nonumber
+N(M=4) = \frac{5}{4}        \\ \nonumber
+\vdots                      \\ \nonumber
+N(M=\infty) = 1             \\ \nonumber
+\end{eqnarray}
+% We need to accept only the natural number solutions $N(M)=1$ and $N(M)=2$ according to our assumptions.
+% Similar computations lead to the expressions for $N(L)$ and $N(K)$\@. 
+
+% In those results we have to reject the solutions which are not natural numbers.
+
+Quite similarly we can compute $N(L)$ and $N(K)$\@.
+
+We can state that with our assumption of having $N \in \mathbb{N}$ we have to reject
+all $N(M)$, $N(L)$ and $N(K)$ solutions which are not natural numbers.
+Our fourth unknown is $N$ equal to either $1$ or $2$ what is in perfect agreement with the Fermat's Last Theorem~\cite{FLT_Wikipedia}\@.
+
+
+\section{Acknowledgement}\label{sec:acknowledgement}
+
+    This article is in honor of American mathematician Kenneth~S.\ Mil\-ler. Due to his 
+    technique of computing the expected value and the standard deviation of number of 
+    successes in Bernoulli trials~\cite{book_by_Miller}
+    we were able to obtain our results. 
+    Author would also like to thank an
+    anonymous student without whom it would take longer to
+    write this paper and who suggested placing the number $p$ next to symbols $Y^{N}$ and $Z^{N}$
+    in Equation~(\ref{eq:FermatEquation}) while the author was working on the universal expression 
+    of the natural number $X$ using rational number $x$ and a real parameter $p$ for partial differentiation. 
+    Author received funds from PFRON allowing purchase of a laptop on which this publication has been written.   
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \begin{Backmatter}
+
+
+\begin{thebibliography}{9}
+
+
+    \bibitem{FLT_Wikipedia} % K. Ansaldi, K. Lin, and Y. Shen,
+    Fermat's Last Theorem. \newline
+    \url{https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem}
+    % Preprint (2017). 
+    % \url{https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem}
+
+\bibitem{book_by_Miller}
+Kenneth S.~Miller, \textit{Engineering Mathematics} (1956), Dover Publications, Inc., New York.
+
+
+
+% \bibitem{bib1}
+% S. Faridi, The facet ideal of a simplicial complex. \textit{Manuscripta Math.} 109 (2002), 159--174.
+
+% \bibitem{bib2} G.Q. Abbasi, S. Ahmad, I. Anwar, and W.A. Baig, \textit{$f$-Ideals of degree 2. Algebra Colloq}. 19 (2012), 921--926.
+
+% \bibitem{bib3}
+% I. Anwar, H. Mahmood, M.A. Binyamin, and M.K. Zafar, On the characterization of $f$-ideals. \textit{Comm.
+% Algebra} 42 (2014), 3736--3741.
+
+
+% \bibitem{bib4}
+% J. Guo and T. Wu, On the $(n,d)^{th}$ $f$-Ideals. \textit{J. Korean Math. Soc.} {52} (2015), 685--697.
+
+
+% \bibitem{bib5}
+% J. Guo, T.Wu, and Q. Liu, $F$-Ideals and $f$-Graphs. \textit{Comm. Algebra} 45 (2016), 3207--3220.
+
+
+% \bibitem{bib6}
+% H. Mahmood, I. Anwar, and M.K., Zafar, A construction of Cohen-Macaulay $f$-graphs.
+% \textit{J. Algebra Appl.} {13} (2014), 1450012, 7 pp.
+
+% \bibitem{bib7}
+% H. Mahmood, I. Anwar, M.A. Binyamin, and S. Yasmeen, On the connectedness of $f$-simplicial complexes.
+% \textit{J. Algebra Appl.} {16} (2017), 1750017, 9 pp.
+
+% \bibitem{bib8} K. Ansaldi, K. Lin, and Y. Shen,
+% Generalized Newton complementary duals of monomial ideals.
+% Preprint (2017). \url{arXiv:1702.00519v1}
+
+% \bibitem{bib9} B. Costa and A. Simis, New constructions of Cremona maps. \textit{Math. Res. Lett.} {20} (2013), 629--645.
+
+
+% \bibitem{FLT_Wikipedia} % K. Ansaldi, K. Lin, and Y. Shen,
+% Fermat's Last Theorem.
+% % Preprint (2017). 
+% \url{https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem}
+
+
+
+
+\end{thebibliography}
+
+% \printaddress
+
+% \end{Backmatter}
+
+\end{document}
