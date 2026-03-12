@@ -1,0 +1,482 @@
+
+\documentclass[12pt]{amsart}
+
+% 
+% 
+
+% Using pdflatex is preferred
+
+\usepackage{amssymb}
+
+%% Optional, but useful:
+\usepackage{enumitem}
+
+%% Add only when there are figures:
+\usepackage{graphicx}
+
+
+\makeatletter
+\@namedef{subjclassname@2020}{%
+  \textup{2020} Mathematics Subject Classification}
+\makeatother
+
+
+
+%% If you are using letters of the Polish alphabet, add 
+\usepackage[T1]{fontenc}
+%% E.g. the name "Zoladz" is then coded \.Zo{\l}\k{a}d\'z
+
+
+
+
+%% Numbered objects of "theorem" style (text italicized).
+%% Below, the optional parameters indicate that all objects are numbered together, and "by section".
+%% However, you are welcome to use any other numbering system of your choice, as well as your own abbreviations.
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{problem}[theorem]{Problem}
+
+%% A numbered theorem with a fancy name:
+
+\newtheorem{mainthm}[theorem]{Main Theorem}
+
+%% Numbered objects of "non-theorem" style (text roman):
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+%% An unnumbered object:
+
+\newtheorem*{xrem}{Remark}
+
+
+%% Equations numbered by section (optional):
+
+\numberwithin{equation}{section}
+
+
+%%%%%%%%%%% For journals:
+
+\frenchspacing
+
+\textwidth=13.5cm
+\textheight=23cm
+\parindent=16pt
+\oddsidemargin=-0.5cm
+\evensidemargin=-0.5cm
+\topmargin=-0.5cm
+\linespread{1.2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% Put your macros here:
+
+%%%% Here are two examples:
+
+\DeclareMathOperator{\len}{length}
+
+\newcommand{\obj}[3]{\mathcal{F}^{#1}\mathbb{S}^{#2}\mathbf{G}_{#3}}
+
+
+%%%%%%%%%%%%%
+
+
+\begin{document}
+
+
+\title[Notes on convergence of the Fourier series]{Notes on convergence of the Fourier series}
+
+
+%%% Give just the affiliation and not the detailed postal address.
+
+
+
+
+\author[P. J. Piskorz]{Pawe{\l} Jan Piskorz}
+% \address{Independent Researcher}
+% \email{paweljanpiskorz@gmail.com}
+
+
+
+\date{}
+
+
+% \begin{abstract}
+% A template for the \texttt{amsart} style. Using \texttt{pdflatex} is strongly preferred.
+% \end{abstract}
+
+\begin{abstract}
+Our notes contain a way to prove the uniform and absolute convergence of any Fourier series of a piecewise
+continuous function. The key technique we use is the computation of the limit of the partial sum of the Fourier series. To achieve that result we apply integration with substitution of variables and the Dirichlet integral value.
+\end{abstract}
+
+
+
+%% Only one classification should be declared as primary.
+
+\subjclass[2020]{Primary 42A20}
+
+% \subjclass[2020]{Primary 42A20; Secondary 43A50}
+
+\keywords{Fourier series, Uniform convergence, Absolute convergence, Partial sum of the Fourier series, Dirichlet integral}
+
+\maketitle
+
+
+\section{Introduction}\label{sec1}
+
+
+
+Let us consider partial sum $s_{N}(x)$ of the Fourier series
+\begin{equation}
+s_{N}(x)
+=
+\frac{a_{0}}{2} + \sum_{k=1}^{N} (a_{k} \cos kx + b_{k} \sin kx)
+\end{equation}
+where
+\begin{equation}
+a_{k} = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos kx \, dx
+\end{equation}
+for $k = 0, 1, 2, \ldots, N$
+\begin{equation}
+b_{k} = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin kx \, dx
+\end{equation}
+for $k = 1, 2, \ldots, N$\@.
+
+Substituting the expressions for the Fourier coefficients we obtain
+\begin{eqnarray}
+\label{eq:F_coefficients}
+s_{N}(x)
+=
+\frac{1}{2\pi} \int_{-\pi}^{\pi} f(t) \, dt
++
+\frac{1}{\pi} \sum_{k=1}^{N} \Big[\int_{-\pi}^{\pi} f(t) \cos kt \, dt \cdot \cos kx + \\ \nonumber
+                               +   \int_{-\pi}^{\pi} f(t) \sin kt \, dt \cdot \sin kx 
+\Big]                                                                                  \\ \nonumber
+=
+\frac{1}{\pi} \int_{-\pi}^{\pi} f(t) \Big[ \frac{1}{2} + \sum_{k=1}^{N} (\cos kt \cos kx + \sin kt \sin kx) \Big] \, dt = \\ \nonumber
+=
+\frac{1}{\pi} \int_{-\pi}^{\pi} f(t) \Big[ \frac{1}{2} + \sum_{k=1}^{N} (\cos k(t - x)) \Big] \, dt 
+\end{eqnarray}
+
+
+% \section{Sum of cosines formula derivation}
+% \label{sec-Sum_of_cosines_formula_derivation}
+
+
+
+\section{Sum of cosines formula derivation}\label{sec2}
+
+
+
+
+We use a formula for the sum of the geometric series $\sum_{k=1}^{N} e^{i k \varphi}$ as in~\cite{kn:Hirst_Book}
+and for convenience presented with modifications in Section~\ref{sec-Geometric_series_evaluation}\@.
+\begin{eqnarray}
+\sum_{k=1}^{N} e^{i k \varphi}
+=
+\sum_{k=1}^{N} (\cos k \varphi + i \sin k \varphi)         \\ \nonumber
+=
+\cos((N+1) \varphi/2) \frac{\sin N \varphi/2}{\sin \varphi/2} + i \sin((N+1) \varphi/2) \frac{\sin N \varphi/2}{\sin \varphi/2}
+\end{eqnarray}
+where $i^2=-1$\@.
+Computing from equations
+\begin{equation}
+\sin(\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta
+\end{equation}
+and
+\begin{equation}
+\cos(\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta
+\end{equation}
+we obtain
+\begin{equation}
+\cos \alpha \sin \beta = \frac{1}{2}(\sin(\alpha + \beta) - \sin(\alpha - \beta))
+\end{equation}
+\begin{equation}
+\sin \alpha \sin \beta = - \frac{1}{2}(\cos(\alpha + \beta) - \cos(\alpha - \beta))
+\end{equation}
+and we can substitute
+\begin{equation}
+\alpha = (N+1)\varphi/2 \,\,\,\,\,\,\,\, \beta=N \varphi/2
+\end{equation}
+\begin{equation}
+\alpha + \beta = N\varphi+\varphi/2 \,\,\,\,\,\,\,\, \alpha - \beta = \varphi/2
+\end{equation}
+After computations we arrive at
+\begin{equation}
+\sum_{k=1}^{N} \sin k \varphi = -\frac{1}{2} ( \cos(N\varphi+\varphi/2) - \cos \varphi/2 ) \frac{1}{\sin \varphi/2}
+\end{equation}
+\begin{equation}
+\label{eq:sum_of_cosines}
+\sum_{k=1}^{N} \cos k \varphi = \frac{1}{2} ( \sin(N\varphi+\varphi/2) - \sin \varphi/2 ) \frac{1}{\sin \varphi/2}
+\end{equation}
+From equation~(\ref{eq:sum_of_cosines}) we receive
+\begin{equation}
+\label{eq:Sum_of_cos}
+\frac{1}{2} + \sum_{k=1}^{N} \cos k \varphi 
+=
+\frac{\sin(N\varphi+\varphi/2)}{2 \sin \varphi/2}
+\end{equation}
+
+
+\section{Applying the sum of cosines formula}
+We apply the formula from equation~(\ref{eq:Sum_of_cos}) for the sum of cosines having $\varphi=t-x$
+in equation~(\ref{eq:F_coefficients})
+\begin{equation}
+s_{N}(x) = \frac{1}{\pi} \int_{-\pi}^{\pi} f(t) \, \frac{\sin(N(t-x)+(t-x)/2)}{2 \sin (t-x)/2} \, dt
+\end{equation}
+We substitute $t-x = u$\@. Then we have the result obtained in~\cite{kn:Tolstov_Book}
+\begin{eqnarray}
+\label{eq:Tolstov_result}
+s_{N}(x) = \frac{1}{\pi} \int_{-\pi-x}^{\pi-x} f(x+u) \, \frac{\sin(Nu+u/2)}{2 \sin u/2} \, du  =   \\ \nonumber
+=
+\frac{1}{\pi} \int_{-\pi}^{\pi} f(x+u) \, \frac{\sin(Nu+u/2)}{2 \sin u/2} \, du
+\end{eqnarray}
+
+Now we substitute in equation~(\ref{eq:Tolstov_result})
+$Nu=\alpha$\@. Then we have $u=\alpha/N$, $u/2=\alpha/2N$, $du=d\alpha/N$\@.
+For the limits of integration
+if $u=-\pi$ then $\alpha=-N\pi$ and if $u=\pi$ then $\alpha=N\pi$\@.
+In this way we obtain
+\begin{eqnarray}
+s_{N}(x) = \frac{1}{\pi} \int_{-N\pi}^{N\pi} f(x+\alpha/N) \frac{\sin(\alpha+\alpha/2N)}{2N \sin \alpha/2N} \, d\alpha  =    \\ \nonumber
+= \frac{1}{\pi} \int_{-N\pi}^{N\pi} f(x+\alpha/N) \frac{\sin(\alpha+\alpha/2N)}{\alpha (\sin \alpha/2N)/(\alpha/2N)} \, d\alpha
+\end{eqnarray}
+
+
+
+
+\section{Taking the limit and the final result}
+In particular for $N \rightarrow \infty$
+\begin{eqnarray}
+\lim_{N \rightarrow \infty} s_{N}(x) =         \\ \nonumber
+=
+\lim_{N \rightarrow \infty} \frac{1}{\pi} \int_{-N\pi}^{N\pi} f(x+\alpha/N) \frac{\sin(\alpha+\alpha/2N)}{\alpha (\sin \alpha/2N)/(\alpha/2N)} \, d\alpha       
+\end{eqnarray}
+We notice that in the numerator above
+\begin{equation}
+\lim_{N \rightarrow \infty} \sin(\alpha+\alpha/2N) = \sin \alpha
+\end{equation}
+and in the denominator we have the limit
+\begin{equation}
+\lim_{N \rightarrow \infty} \alpha (\sin \alpha/2N)/(\alpha/2N) = \alpha
+\end{equation}
+what is in agreement with the known limit
+\begin{equation}
+\lim_{\vartheta \rightarrow 0} \frac{\sin \vartheta}{\vartheta} = 1
+\end{equation}
+where $\vartheta=\alpha/2N$\@.
+
+In this way we receive
+\begin{eqnarray}
+\label{eq:our_result}
+s(x)
+=
+\lim_{N \rightarrow \infty} s_{N}(x) =                                                   \\ \nonumber
+=
+\frac{1}{\pi} \int_{-\infty}^{\infty} f(x) \frac{\sin \alpha}{\alpha} \, d\alpha
+=
+\frac{1}{\pi} f(x) \int_{-\infty}^{\infty} \frac{\sin \alpha}{\alpha} \, d\alpha    =    \\ \nonumber
+= \frac{1}{\pi} f(x) \pi = f(x)
+\end{eqnarray}
+
+We have shown that the partial sum $s_{N}(x)$ of any Fourier series for $N \rightarrow \infty$ converges uniformly
+to the function $f(x)$ for all values of $x$ except in the points of $f(x)$ discontinuity.
+The series $s(x)$ is uniformly convergent in the range $[a, b]$ because for any $\epsilon > 0$ one can select such index $M$
+independent on the value of $x$ that for any $N \ge M$ it occurs
+\begin{equation}
+|s_{N}(x) - s(x)| < \epsilon
+\end{equation}
+
+We obviously also have that
+\begin{equation}
+|s(x)|
+=
+\lim_{N \rightarrow \infty} |s_{N}(x)| =
+|f(x)|
+\end{equation}
+what means that for any $\epsilon > 0$ one can select such index $M$
+independent on the value of $x$ that for any $N \ge M$ it occurs
+\begin{equation}
+||s_{N}(x)| - |s(x)|| < \epsilon
+\end{equation}
+The inequality above is the statement of absolute convergence of the Fourier series $s(x)$\@.
+
+The conclusion is that if a series is a Fourier series of any periodic function $f(x)$ then it is convergent uniformly and absolutely
+to the function $f(x)$ except in the points of $f(x)$ discontinuity.
+
+To compute the Dirichlet integral
+\[
+\int_{-\infty}^{\infty} \frac{\sin \alpha}{\alpha} \, d\alpha
+\]
+we have used the result from Sections~\ref{sec-Geometric_series_evaluation} and~\ref{sec-Dirichlet_integral_evaluation}\@.
+
+
+
+
+\section{Geometric series evaluation}
+\label{sec-Geometric_series_evaluation}
+
+
+Here we evaluate the sum of the geometric series as in \cite{kn:Hirst_Book}
+\begin{equation}
+S_{N} = \sum_{k=1}^{N} e^{ik\varphi} 
+\end{equation}
+We write
+\begin{equation}
+\label{eq:S_N}
+S_{N}
+=
+e^{i\varphi} + e^{i2\varphi} +  e^{i3\varphi} + \ldots + e^{iN\varphi}
+\end{equation}
+We multiply the above equation by $e^{i\varphi}$ on both sides
+obtaining
+\begin{equation}
+\label{eq:e_i_varphi_S_N}
+e^{i\varphi} S_{N} 
+=
+e^{i2\varphi} +  e^{i3\varphi} + \ldots + e^{iN\varphi} + e^{i(N+1)\varphi}
+\end{equation}
+Now we subtract equation~(\ref{eq:e_i_varphi_S_N}) from equation~(\ref{eq:S_N}) and we receive
+\begin{equation}
+S_{N} - e^{i\varphi} S_{N} 
+=
+e^{i\varphi} - e^{i(N+1)\varphi}
+\end{equation}
+what can be rewritten as
+\begin{equation}
+\label{eq:Sum_of_the_series}
+S_{N}(1 - e^{i\varphi})
+=
+e^{i\varphi} - e^{i(N+1)\varphi}
+\end{equation}
+From equation~(\ref{eq:Sum_of_the_series}) we compute the partial sum $S_{N}$ as
+\begin{eqnarray}
+\label{eq:Sum_of_the_series_now}
+S_{N}
+=
+\frac{e^{i\varphi} - e^{i(N+1)\varphi}}{1 - e^{i\varphi}}
+=
+\frac{e^{i(N+1)\varphi} - e^{i\varphi}}{e^{i\varphi} - 1}
+=
+e^{i\varphi} \frac{e^{iN\varphi} - 1}{e^{i\varphi} - 1}  =   \\ \nonumber
+=
+e^{i\varphi} \frac{e^{iN\varphi} - 1}{e^{i\varphi/2} (e^{i\varphi/2} - e^{-i\varphi/2})}
+=
+e^{i\varphi/2} \frac{e^{iN\varphi} - 1}{e^{i\varphi/2} - e^{-i\varphi/2}} =                     \\ \nonumber
+=
+e^{i\varphi/2} e^{iN\varphi/2}   \frac{e^{iN\varphi/2} - e^{-iN\varphi/2}}{e^{i\varphi/2} - e^{-i\varphi/2}} 
+=
+e^{i(N\varphi + \varphi)/2}  \frac{e^{iN\varphi/2} - e^{-iN\varphi/2}}{e^{i\varphi/2} - e^{-i\varphi/2}}   =      \\ \nonumber
+=
+e^{i(N\varphi + \varphi)/2}  \frac{\sin(N\varphi/2)}{\sin(\varphi/2)}
+\end{eqnarray}
+Then we can write
+\begin{equation}
+S_{N} = \sum_{k=1}^{N} e^{ik\varphi} = e^{i(N\varphi + \varphi)/2}  \frac{\sin(N\varphi/2)}{\sin(\varphi/2)}
+\end{equation}
+and therefrom we obtain
+\begin{eqnarray}
+S_{N} = \sum_{k=1}^{N} e^{ik\varphi} = \sum_{k=1}^{N} (\cos k \varphi + i \sin k \varphi)             \\ \nonumber
+=
+e^{i(N\varphi + \varphi)/2}  \frac{\sin(N\varphi/2)}{\sin(\varphi/2)}  =  \\ \nonumber
+%\sum_{k=1}^{N} e^{i k \varphi}
+=
+\cos((N+1) \varphi/2) \frac{\sin N \varphi/2}{\sin \varphi/2} + i \sin((N+1) \varphi/2) \frac{\sin N \varphi/2}{\sin \varphi/2}
+\end{eqnarray}
+what gives
+\begin{equation}
+    \sum_{k=1}^{N} \cos k \varphi = 
+    \cos((N+1) \varphi/2) \frac{\sin N \varphi/2}{\sin \varphi/2}
+\end{equation}
+\begin{equation}
+    \sum_{k=1}^{N} \sin k \varphi = 
+    \sin((N+1) \varphi/2) \frac{\sin N \varphi/2}{\sin \varphi/2}
+\end{equation}
+
+
+
+\section{Dirichlet integral evaluation}
+\label{sec-Dirichlet_integral_evaluation}
+
+
+
+We have written previously in Section~\ref{sec2} that
+\begin{equation}
+\frac{\sin(N\varphi+\varphi/2)}{2 \sin \varphi/2}
+=
+\frac{1}{2} + \sum_{k=1}^{N} \cos k \varphi 
+\end{equation}
+We integrate both sides of the above equation from $-\pi$ to $\pi$
+\begin{equation}
+\int_{-\pi}^{\pi} \frac{\sin(N\varphi+\varphi/2)}{2 \sin \varphi/2} \, d\varphi
+=
+\frac{1}{2} \int_{-\pi}^{\pi}  \, d\varphi + \sum_{k=1}^{N}  \int_{-\pi}^{\pi} \cos k \varphi   \, d\varphi
+\end{equation}
+receiving
+\begin{equation}
+\int_{-\pi}^{\pi} \frac{\sin(N\varphi+\varphi/2)}{2 \sin \varphi/2} \, d\varphi
+=
+\pi
+\end{equation}
+because
+\begin{equation}
+\int_{-\pi}^{\pi} \cos k \varphi   \, d\varphi = 0
+\end{equation}
+for any value of $k$\@.
+
+Now we substitute as before
+$N\varphi=\alpha$\@. Then we have $\varphi=\alpha/N$, $\varphi/2=\alpha/2N$, $d\varphi=d\alpha/N$\@.
+If $\varphi=-\pi$ then \newline $\alpha=-N\pi$ and~if $\varphi=\pi$ then $\alpha=N\pi$\@.
+After substitutions we may write that
+\begin{equation}
+\int_{-N\pi}^{N\pi} \frac{\sin(\alpha+\alpha/2N)}{2N \sin \alpha/2N} \, d\alpha  
+= \pi
+\end{equation}
+and after taking the limit $N$ approaching infinity we arrive at
+\begin{equation}
+\int_{-\infty}^{\infty} \frac{\sin \alpha}{\alpha} \, d\alpha = \pi
+\end{equation}
+in a similar way like at the evaluation of the limit of partial sum of the Fourier series.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{99}
+
+\bibitem[Fol]{kn:Folland_Book} Folland~Gerald~B\
+                                         (2009) {\em Fourier Analysis and Its Applications\/} 
+                                         American Mathematical Society
+
+\bibitem[Hir]{kn:Hirst_Book} Hirst~Keith~E\   
+                                         (1995) {\em Modular Mathematics Numbers, Sequences and Series\/} Oxford: 
+                                         Butterworth-Heinemann                                         
+
+\bibitem[Katz]{kn:Katznelson_Book} Katznelson~Yitzhak\
+                                         (2004) {\em An Introduction to Harmonic Analysis\/} 
+                                         Cambridge: Cambridge University Press
+
+\bibitem[Riem]{kn:Riemann_Book} Riemann~B\
+                                         (1867) {\em Üeber die Darstellbarkeit ei\-ner Fun\-ction durch ei\-ne tri\-gonometrische Reihe\/} 
+                                         Göttingen: Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen
+
+\bibitem[Ste]{kn:Stein_Book} Stein~Elias~M and Shakarchi Rami\   
+                                         (2011) {\em Fourier Analysis\/} Princeton and Oxford:
+                                         Princeton University Press
+
+\bibitem[Tol]{kn:Tolstov_Book} Tolstov~Georgi~P\ Translated from the Russian by Silverman~Richard~A
+                                         (1976) {\em Fourier Series\/} New York, NY: Dover Publications, Inc.
+                                        
+\bibitem[Zyg]{kn:Zygmund_Book} Zygmund~A\   
+                                         (2002) {\em Trigonometric Series\/} (Vol.~1 and 2) Cambridge: 
+                                         Cambridge University Press
+
+\end{thebibliography}
+
+
+\end{document}
