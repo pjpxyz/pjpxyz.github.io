@@ -1,0 +1,162 @@
+\documentclass[12pt]{article}
+% \usepackage{amssymb}
+% \usepackage{amsmath}
+% \usepackage{graphicx}
+% \usepackage{float}
+% \usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+
+\begin{document}
+
+
+\section*{Notatka o wyprowadzeniu szeregów Taylora \newline i Maclaurina}
+
+
+
+{\bf Szereg Taylora.\/} Załóżmy, że dla funkcji $f(x)$ jest możliwe następujące rozwinięcie
+w szereg potęgowy
+\begin{equation}
+\label{eq:szereg_potegowy}
+f(x) = A_{0} + A_{1} (x-a) + A_{2} (x-a)^{2} + A_{3} (x-a)^{3} 
++ A_{4} (x-a)^{4} + \ldots
+\end{equation}
+co przy użyciu symbolu sumy zapisujemy jako
+\begin{equation}
+f(x)
+=
+\sum_{n=0}^{\infty}  A_{n} (x-a)^{n}
+\end{equation}
+Zauważamy, że jeżeli podstawimy $x = a$ to wtedy
+\begin{equation}
+A_{0} = f(a)
+\end{equation}
+Jeżeli obliczymy pierwszą pochodną rozwinięcia~(\ref{eq:szereg_potegowy})
+to otrzymamy
+\begin{equation}
+f'(x) = A_{1} + 2A_{2} (x-a) + 3A_{3} (x-a)^{2} + 4A_{4} (x-a)^{3} 
++ 5A_{5} (x-a)^{4} + \ldots
+\end{equation}
+Jeżeli podstawimy $x = a$ w powyższym równaniu to wtedy
+\begin{equation}
+A_{1} = f'(a)
+\end{equation}
+Jeżeli obliczymy drugą pochodną funkcji $f(x)$ to otrzymamy
+\begin{equation}
+f''(x) = 2 A_{2}  + 2 \cdot 3 A_{3} (x-a) + 3 \cdot 4 A_{4} (x-a)^{2} 
++ 4 \cdot 5 A_{5} (x-a)^{3} + \ldots
+\end{equation}
+Po podstawieniu $x = a$ otrzymujemy
+\begin{equation}
+A_{2} = \frac{f''(a)}{2}
+\end{equation}
+Ponownie jeżeli obliczymy trzecią pochodną rozwinięcia funkcji $f(x)$ w szereg 
+potęgowy to otrzymamy
+\begin{eqnarray}
+f^{(3)}(x) = 
+1 \cdot 2 \cdot 3 A_{3} (x-a)^{0} + 
+2 \cdot 3 \cdot 4 A_{4} (x-a)^{1} + 
+3 \cdot 4 \cdot 5 A_{5} (x-a)^{2} + \\ \nonumber
+4 \cdot 5 \cdot 6 A_{6} (x-a)^{3} + \ldots
+\end{eqnarray}
+Z powyższego dostajemy po podstawieniu $x=a$
+\begin{equation}
+A_{3} = \frac{f^{(3)}(a)}{1 \cdot 2 \cdot 3}
+\end{equation}
+Obliczając wyższe pochodne funkcji $f(x)$ widzimy, że wyrażenie na
+współczynnik $A_{n}$ w rozwinięciu w szereg potęgowy~(\ref{eq:szereg_potegowy})
+wynosi
+\begin{equation}
+A_{n} = \frac{f^{(n)}(a)}{n!}
+\end{equation}
+Stosując powyższy rezultat otrzymujemy, że 
+rozwinięcie w szereg potęgowy~(\ref{eq:szereg_potegowy})
+możemy zapisać jako sumę
+\begin{equation}
+\label{eq:szereg_Taylora}
+f(x) 
+=
+\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n}
+\end{equation}
+Sumę w równaniu~(\ref{eq:szereg_Taylora}) nazywamy {\em szeregiem Taylora\/} funkcji $f(x)$\@.
+
+
+
+{\bf Szereg Maclaurina.\/} Jeżeli w szeregu Taylora~(\ref{eq:szereg_Taylora}) położymy $a = 0$ to otrzymamy 
+szereg potęgowy zwany {\em szeregiem Maclaurina\/}
+\begin{equation}
+\label{eq:szereg_Maclaurina}
+f(x) 
+=
+\sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^{n}
+\end{equation}
+
+
+{\bf Przykład: Szeregi Taylora i Maclaurina funkcji $e^{x}$.\/}
+Dla $f(x) = e^{x}$ mamy szereg Taylora
+\begin{equation}
+\label{eq:szeregTaylora_exp_x}
+e^{x} = \sum_{n=0}^{\infty} \frac{e^{a}}{n!} (x-a)^{n}
+\end{equation}
+ponieważ pochodne $e^{x}$ wszystkich rzędów równają się $e^{x}$\@. 
+Podstawiając $a = 0$ w szeregu Taylora~(\ref{eq:szeregTaylora_exp_x})
+otrzymujemy odpowiedni szereg Maclaurina funkcji $e^{x}$
+\begin{equation}
+\label{eq:szeregMaclaurina_exp_x}
+e^{x} = \sum_{n=0}^{\infty} \frac{1}{n!} x^{n}
+\end{equation}
+Szereg~(\ref{eq:szeregMaclaurina_exp_x})
+pozwala na obliczenie stałej Eulera $e$ z dowolną dokładnością
+po podstawieniu w powyższym równaniu wartości $x=1$
+\begin{equation}
+\label{eq:szeregMaclaurina_exp_1}
+e = \sum_{n=0}^{\infty} \frac{1}{n!}
+\end{equation}
+
+
+{\bf Przykład: Szeregi Maclaurina funkcji $\cos x$ oraz $\sin x$.\/}
+Jeżeli w szeregu~(\ref{eq:szeregMaclaurina_exp_x}) podstawimy $ix$ zamiast $x$ gdzie $i$ jest liczbą taką, że $i^{2} = -1$ to otrzymamy
+\begin{eqnarray}
+\label{eq:szeregMaclaurina_exp_ix}
+e^{ix} = \sum_{n=0}^{\infty} \frac{1}{n!} i^{n} x^{n}    % =   \\ \nonumber
+=
+\frac{1}{0!} i^{0} x^{0} + \frac{1}{1!} i x + \frac{1}{2!} i^{2} x^{2} + \frac{1}{3!} i^{3} x^{3} +   \\ \nonumber
++
+\frac{1}{4!} i^{4} x^{4} + \frac{1}{5!} i^{5} x^{5} + \frac{1}{6!} i^{6} x^{6} + \frac{1}{7!} i^{7} x^{7} + \ldots  =  \\ \nonumber
+=
+    \Bigg( \frac{1}{0!} i^{0} x^{0} - \frac{1}{2!} x^{2} + \frac{1}{4!} x^{4} - \frac{1}{6!} x^{6} +  \ldots \Bigg) +     \\ \nonumber
++ i \Bigg( \frac{1}{1!}       x     - \frac{1}{3!} x^{3} + \frac{1}{5!} x^{5} - \frac{1}{7!} x^{7} +  \ldots \Bigg) =     \\ \nonumber
+=
+\sum_{n=0}^{\infty} \frac{(-1)^{n}}{(2n)!} x^{2n} + i \sum_{n=0}^{\infty} \frac{(-1)^{n}}{(2n+1)!} x^{2n+1}
+\end{eqnarray}
+Z drugiej strony z własności liczb zespolonych wiadomo, że
+\begin{equation}
+\label{eq:exp_ix}
+e^{ix} = \cos x + i \sin x
+\end{equation}
+co po porównaniu odpowiednich wyrazów w dwu powyższych równaniach na $e^{ix}$ daje nam wzory na szereg Maclaurina funkcji $\cos x$
+\begin{equation}
+\label{eq:cos_x}
+\cos x = \sum_{n=0}^{\infty} \frac{(-1)^{n}}{(2n)!} x^{2n}
+\end{equation}
+oraz na szereg Maclaurina funkcji $\sin x$
+\begin{equation}
+\label{eq:sin_x}
+\sin x = \sum_{n=0}^{\infty} \frac{(-1)^{n}}{(2n+1)!} x^{2n+1}
+\end{equation}
+Z powyższych wzorów na odpowiednie szeregi Maclaurina można obliczyć wartości funkcji $\cos x$ oraz $\sin x$ z dowolną dokładnością.
+
+
+
+
+
+\subsection*{}
+
+Paweł Jan Piskorz
+\end{document}
+
+
+% +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
