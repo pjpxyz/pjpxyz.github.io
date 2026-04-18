@@ -112,8 +112,8 @@
 % \end{abstract}
 
 \begin{abstract}
-Our notes contain a way to prove the uniform and absolute convergence of any Fourier series of a piecewise
-continuous function. The key technique we use is the computation of the limit of the partial sum of the Fourier series. To achieve that result we apply integration with substitution of variables and the Dirichlet integral value.
+Our notes contain a way to prove the point convergence of any Fourier series of a piecewise periodic
+continuous smooth function. The key technique we use is the computation of the limit of the partial sum of the Fourier series. To achieve that result we apply integration with substitution of variables and the Dirichlet integral value.
 \end{abstract}
 
 
@@ -124,7 +124,7 @@ continuous function. The key technique we use is the computation of the limit of
 
 % \subjclass[2020]{Primary 42A20; Secondary 43A50}
 
-\keywords{Fourier series, Uniform convergence, Absolute convergence, Partial sum of the Fourier series, Dirichlet integral}
+\keywords{Fourier series, Point convergence, Partial sum of the Fourier series, Dirichlet integral}
 
 \maketitle
 
@@ -165,9 +165,6 @@ s_{N}(x)
 \frac{1}{\pi} \int_{-\pi}^{\pi} f(t) \Big[ \frac{1}{2} + \sum_{k=1}^{N} (\cos k(t - x)) \Big] \, dt 
 \end{eqnarray}
 
-
-% \section{Sum of cosines formula derivation}
-% \label{sec-Sum_of_cosines_formula_derivation}
 
 
 
@@ -286,29 +283,16 @@ s(x)
 = \frac{1}{\pi} f(x) \pi = f(x)
 \end{eqnarray}
 
-We have shown that the partial sum $s_{N}(x)$ of any Fourier series for $N \rightarrow \infty$ converges uniformly
-to the function $f(x)$ for all values of $x$ except in the points of $f(x)$ discontinuity.
-The series $s(x)$ is uniformly convergent in the range $[a, b]$ because for any $\epsilon > 0$ one can select such index $M$
-independent on the value of $x$ that for any $N \ge M$ it occurs
+We have shown that the partial sum $s_{N}(x)$ of any Fourier series for $N \rightarrow \infty$ converges pointwise
+to the function $f(x)$ for all values of $x$ except in the points of $f(x)$ discontinuity
 \begin{equation}
-|s_{N}(x) - s(x)| < \epsilon
+|s_{N}(x) - s(x)| < \epsilon.
 \end{equation}
 
-We obviously also have that
-\begin{equation}
-|s(x)|
-=
-\lim_{N \rightarrow \infty} |s_{N}(x)| =
-|f(x)|
-\end{equation}
-what means that for any $\epsilon > 0$ one can select such index $M$
-independent on the value of $x$ that for any $N \ge M$ it occurs
-\begin{equation}
-||s_{N}(x)| - |s(x)|| < \epsilon
-\end{equation}
-The inequality above is the statement of absolute convergence of the Fourier series $s(x)$\@.
 
-The conclusion is that if a series is a Fourier series of any periodic function $f(x)$ then it is convergent uniformly and absolutely
+
+The conclusion is that if a series is a Fourier series of any periodic piecewise continuous and smooth
+function $f(x)$ then it is convergent pointwise
 to the function $f(x)$ except in the points of $f(x)$ discontinuity.
 
 To compute the Dirichlet integral
