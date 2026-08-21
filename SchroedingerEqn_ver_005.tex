@@ -1,0 +1,180 @@
+\documentclass[12pt,a4paper,pl,fleqn]{article}
+
+
+% \usepackage[english,polish]{babel}                   % ostatni jezyk przewaza w opisach rozdzialow i literatury
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[toc]{appendix}
+% \usepackage[T1]{fontenc}
+
+
+
+% \documentclass[a4paper,12pt]{article}
+% \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german,polish,english]{babel}
+\usepackage{polski}
+\usepackage{lmodern}
+
+
+\setlength{\textheight}{210mm}
+\setlength{\textwidth}{145mm}
+\setlength{\parindent}{20.0mm}
+
+\renewcommand{\thesection}{\Roman{section}}
+
+\title{Obtaining Schrödinger Equation from Wave Equation}
+
+% \title{Wyprowadzenie równania Schrödingera z równania falowego}
+
+\author{Paweł Jan Piskorz\footnote{Address: Krakowska 55, 31-066 Kraków, Poland; email: paweljanpiskorz@gmail.com}}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+
+
+
+% W styczniu 2026 roku mija sto lat kiedy to austriacki fizyk Erwin Schrödinger opublikował równanie nazwane później jego imieniem.
+% Równanie Schrödingera może zostać wyprowadzone z równania falowego, hipotezy de~Broglie oraz z wzoru Plancka na energię kwantu fali.
+
+January 2026 marks one hundred years since the Austrian physicist Erwin Schrödinger has published the equation later named after him.
+Schrödinger equation can be derived from wave equation, de~Broglie hypothesis and Planck formula for energy of wave quanta.
+
+
+% Równanie falowe w jednym wymiarze może zostać zapisane jako
+The wave equation in one dimension can be written as
+\begin{equation}
+\frac{1}{v_{p}^{2}} \frac{\partial^{2} \Psi}{\partial t^{2}} = \frac{\partial^{2} \Psi}{\partial x^{2}}
+\end{equation}
+% gdzie $v_{p}$ oznacza prędkość fazową fali, $t$ oznacza czas natomiast $x$ oznacza współrzędną miejsca, w ktorym obserwujemy
+% falę o wielkości $\Psi(x, t)$\@.
+where $v_{p}$ is the phase velocity of the wave, $t$ denotes time and $x$ is the coordinate of the point on the $Ox$ axis, where the wave of
+magnitude $\Psi(x, t)$ is being observed.
+
+
+
+% Hipoteza de~Broglie może zostać wyprowadzona z wzoru Einsteina
+De Broglie hypothesis can be derived from Einstein formula
+\begin{equation}
+E = mc^{2}
+\end{equation}
+% na energię $E$ cząstki posiadającej masę $m$ i w którym $c$ oznacza prędkość światła w próżni. Otrzymujemy wtedy, że
+for energy $E$ of the mass $m$\@. $c$ denotes the speed of light in vacuum. We receive therefrom
+\begin{equation}
+E = mc^{2} = m c c = p c = p \lambda/T
+\end{equation}
+where $p$ denotes particle momentum, $\lambda$ is the wave length, and $T$ is the period of the wave in time domain.
+On the other hand from the Planck formula we have
+% gdzie $p$ oznacza pęd cząstki, $\lambda$ jest długością fali a $T$ jest okresem fali w domenie czasu.
+% Z drugiej strony ze wzoru Plancka otrzymujemy, że
+\begin{equation}
+E = h \nu = h/T
+\end{equation}
+where $h$ is Planck constant, $\nu$ wave frequency.
+Comparing the two above equations for energy $E$ we receive
+% gdzie $h$ jest stałą Plancka a $\nu$ jest częstotliwością fali.
+% Porównując dwa powyższe równania na energię $E$ dostajemy wzór
+\begin{equation}
+p \lambda/T = h/T
+\end{equation}
+and therefrom the de Broglie hypothesis
+% a z niego hipotezę de~Broglie
+\begin{equation}
+p = h / \lambda
+\end{equation}
+% which relates the particle momentum with its wave length.
+that is the formula relating the particle momentum $p$ with the length $\lambda$ of its wave. Such wave we call the {\em de Broglie wave.}
+% czyli wzór łączący pęd $p$ cząstki z długością $\lambda$ jej fali, którą nazywamy {\em falą de Broglie.}
+% Teraz wyprowadzimy wzór na energię kinetyczną $E - V$ cząstki, gdzie $E$ jest jej energią całkowitą a $V$ jej energią potencjalną.
+
+Now we derive the formula for the kinetic energy $E - V$ of a particle, where $E$ is its total energy and $V$ is its potential energy.
+\begin{equation}
+E - V = \frac{1}{2} m v_{p}^{2}
+\end{equation}
+% Kontynuujemy otrzymując
+We continue obtaining
+\begin{equation}
+2 m (E - V) = m^{2} v_{p}^{2} = p^{2}
+\end{equation}
+\begin{equation}
+p = [2 m (E - V)]^{1/2} = h/\lambda
+\end{equation}
+\begin{equation}
+\lambda = \frac{h}{[2 m (E - V)]^{1/2}}
+\end{equation}
+\begin{equation}
+v_{p} = \lambda/T = \lambda \nu = \frac{h \nu}{[2 m (E - V)]^{1/2}} = \frac{E}{[2 m (E - V)]^{1/2}}
+\end{equation}
+% Zatem
+Therefore
+\begin{equation}
+\frac{1}{v_{p}^{2}} = \frac{2 m (E - V)}{E^{2}}
+\end{equation}
+
+The solution of the wave equation can be presented in the form
+% Rozwiązanie równania falowego może zostać przedstawione w postaci
+\begin{equation}
+\Psi =  e^{i \omega t}  \varphi(x) =   e^{i (E/\hbar) t} \varphi(x)     
+\end{equation}
+where $E = \hbar \omega$ whereby $\hbar = h/2\pi$ and $\omega = 2\pi/T$
+\begin{equation}
+\frac{\partial \Psi}{\partial t} = i \frac{E}{\hbar} e^{i (E/\hbar) t} \varphi(x)
+\end{equation}
+\begin{equation}
+\frac{\partial^{2} \Psi}{\partial t^{2}} = - \frac{E^{2}}{\hbar^{2}} e^{i (E/\hbar) t} \varphi(x)
+\end{equation}
+\begin{equation}
+\frac{\partial^{2} \Psi}{\partial x^{2}} = e^{i (E/\hbar) t} \, \frac{\partial^{2} \varphi(x)}{\partial x^{2}}
+\end{equation}
+
+
+\begin{equation}
+\frac{2m(E - V)}{E^{2}} \frac{\partial^{2} \Psi}{\partial t^{2}} = \frac{\partial^{2} \Psi(x)}{\partial x^{2}}
+\end{equation}
+
+
+\begin{equation}
+- \frac{2m(E - V)}{E^{2}} \frac{E^{2}}{\hbar^{2}} e^{i (E/\hbar) t} \varphi(x) = e^{i (E/\hbar) t} \frac{\partial^{2} \varphi(x)}{\partial x^{2}}
+\end{equation}
+
+\begin{equation}
+- \frac{2m}{\hbar^{2}} (E - V) \varphi(x) = \frac{\partial^{2} \varphi(x)}{\partial x^{2}}
+\end{equation}
+Therefrom we obtain the time independent Schrödinger equation in one dimension
+% Stąd otrzymujemy równanie znane jako równanie Schrödingera w jednym wymiarze niezależne od czasu
+\begin{equation}
+- \frac{\hbar^{2}}{2 m} \frac{\partial^{2} \varphi(x)}{\partial x^{2}}  + V(x) \varphi(x) = E \varphi(x)
+\end{equation}
+% które otwiera nowe możliwości opisu fotonów, elektronów, atomów pierwiastków i cząsteczek chemicznych oraz innych układów mikroświata.
+which opens up new possibilities for describing photons, electrons, atoms of elements, chemical molecules and other systems of the microworld.
+
+
+
+
+
+
+%8888888888888888888888888888888888888888888888888888888888888888
+
+% \begin{thebibliography}{99}
+% \bibitem{kn:Borowitz_Book} Borowitz, S. \ 
+%                                         (1967) {\em Fundamentals of Quantum Mechanics\/} W.A.~Benjamin, Inc., New York, Amsterdam
+
+
+
+% \end{thebibliography}
+
+% \subsection*{}
+
+% \begin{verbatim}
+% Pawel J. Piskorz
+% \end{verbatim}
+
+
+\end{document}
+
+
+
+
