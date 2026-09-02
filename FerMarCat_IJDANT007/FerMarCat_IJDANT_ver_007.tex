@@ -1,0 +1,418 @@
+\documentclass[11pt]{article}
+
+% ================= Packages =================
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyfoot[R]{\footnotesize\url{https://ijdant-math.org/}}
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+
+
+% ================= Formatting =================
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\titleformat{\section}{\bfseries\large}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection.}{0.5em}{}
+
+% ================= Custom Commands =================
+\newcommand{\journal}{\textbf{Communications on Applied Nonlinear Analysis}}
+\newcommand{\issn}{ISSN: 1074-133X}
+\newcommand{\volume}{Vol. X No. Y (20--)}
+
+% ================= Document =================
+\begin{document}
+
+
+% ================= Journal Header =================
+\noindent
+\begin{minipage}[t]{0.85\textwidth}
+\textbf{International Journal of Diophantine Approximation and Number Theory}\\
+ISSN: 3117-812X\\
+Vol. X No. Y (20--)
+\end{minipage}
+\vspace{0.7cm}
+\hrule
+\vspace{0.7cm}
+
+
+% ================= Title =================
+{\Large{$Original\ Research$}}\\
+%\vspace{0.2cm}
+\\
+% {\LARGE\bfseries Paper Title}\\[0.5cm]
+{\LARGE\bfseries Obtaining Exponents in Fermat, Markov and Catalan Diophantine Equations}\\[0.5cm]
+
+
+
+
+
+
+%\vspace{0.8cm}
+
+% ===== Line before Abstract =====
+%\hrule\vspace{0.4cm}
+
+% ================= Abstract Block =================
+
+\noindent
+\textbf{Pawel Jan Piskorz}$^{1,*}$
+% \textbf{Firstname Lastname}$^{2}$,
+% \textbf{Firstname Lastname}$^{2,*}$
+
+\vspace{0.2cm}
+
+\noindent
+\begin{minipage}[t]{0.32\textwidth}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.65\textwidth} 
+
+\noindent
+$^{1}$ Independent Researcher; \texttt{paweljanpiskorz@gmail.com}\\
+% $^{2}$ Affiliation 2; \texttt{e-mail@e-mail.com}
+% \\
+\noindent
+$^{*}$\textit{Correspondence:} \texttt{ul.~Krakowska 55, 31-066 Kraków, Poland}
+
+\vspace{1cm}
+
+
+
+\end{minipage}
+
+
+\noindent
+\begin{minipage}[t]{0.32\textwidth}
+%\vfill
+%\textbf{Article History}\\[4pt]
+Received: dd-mm-yyyy\\
+Revised: dd-mm-yyyy\\
+Accepted: dd-mm-yyyy
+\\
+{\small Copyright:©2026 by the authors.
+Submitted to the IJDANT for possible open access
+publication.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.65\textwidth} 
+
+\textbf{Abstract}\\
+We propose a procedure which allows to determine the only admissible exponents
+in Diophantine equations of three kinds: Fermat, Markov and Catalan.
+First, we use a set of rewriting rules for each Diophantine equation.
+Second, we obtain the parametrized versions of the Diophantine equations. 
+Next, we differentiate each of parametrized equations obtaining the identities
+for Fermat, Markov and Catalan equations. 
+
+
+\textbf{Objectives:} The objective is to find the only admissible exponents in Fermat, Markov
+and Catalan Diophantine equations.
+
+\textbf{Methods:} We obtain the parametrized versions of the Diophantine equations, introduce a real parameter
+and differentiate the appropriate equations with respect to it.
+
+\textbf{Results:} Due to the determined identities we are able
+to compute the equations admissible exponents.
+
+\textbf{Conclusions:} We present the appropriate and only valid exponents in the three Diophantine equations: Fermat, Markov and Catalan.
+
+\vspace{1cm}
+% ===== Line after Abstract =====
+\hrule
+
+
+\end{minipage}
+
+\vspace{1cm}
+
+\textbf{Keywords:} Diophantine equations of Fermat, Markov and Catalan, Partial differentiation.
+
+\textbf{Mathematics subject classification:} 11D61.
+
+
+\section{Introduction} \label{sec:Intr}
+
+We start with a set of rewriting rules for the Fermat, Markov and Catalan equations
+transforming those into equations which allow their partial differentiation.
+This leads us to certain identities. From the obtained identities we
+receive a sequence the limits of which determine the equations admissible exponents.
+
+
+\section{Fermat Diophantine equation}
+
+We can write the Fermat's Diophantine equation \cite{Edwards1978FLT, Vandiver1929FLT, Vandiver1946FLT, Dickson1917FLT} as
+\begin{equation}
+\label{eq:FDE}
+a^{n} + b^{n} = c^{n},
+\end{equation}
+where $a, b, c, n$ are natural numbers (i.e.~integers greater than zero).
+
+
+We will replace $a$ with $x + kx$, where $x \in \mathbb{Q}$ and $k \in \mathbb{N}$, rewriting (\ref{eq:FDE}) as
+\begin{equation}
+\label{eq:FDE_rewritten}
+(x + kx)^{n} + b^{n} = c^{n}
+\end{equation}
+or
+\begin{equation}
+\label{eq:FDE_rewritten_x}
+(k + 1)^{n} x^{n} + b^{n} = c^{n}.
+\end{equation}
+
+Setting $x = \frac{1}{k+1}, \frac{2}{k+1}, \frac{3}{k+1}, \ldots$,
+will make $a = 1, 2, 3, \ldots$ , in (\ref{eq:FDE}).
+Similarly, we will have
+\begin{equation}
+\label{eq:FDE_rewritten_Y}
+a^{n} + (y + ky)^{n} = c^{n}
+\end{equation}
+and
+\begin{equation}
+\label{eq:FDE_rewritten_Z}
+a^{n} + b^{n} = (z + kz)^{n},
+\end{equation}
+where $y, z = \frac{1}{k+1}, \frac{2}{k+1}, \frac{3}{k+1}, \ldots$ \@.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We introduce a real parameter
+$p \in \mathbb{R}$ into (\ref{eq:FDE_rewritten}) as follows
+\begin{equation}
+\label{eq:FDE_rewritten_with_p}
+(x + kpx)^{n} + b^{n} p = c^{n} p.
+\end{equation}
+Additional parameters $q, r \in \mathbb{R}$ will also be appropriately introduced into 
+(\ref{eq:FDE_rewritten_Y})
+and
+(\ref{eq:FDE_rewritten_Z}) as
+\begin{equation}
+\label{eq:FDE_rewritten_Y_with_q}
+a^{n} q + (y + kqy)^{n} = c^{n} q
+\end{equation}
+and
+\begin{equation}
+\label{eq:FDE_rewritten_Y_with_r}
+a^{n} r + b^{n} r = (z + krz)^{n},
+\end{equation}
+respectively. Taking partial derivative of (\ref{eq:FDE_rewritten_with_p})
+with respect to $p$, we obtain
+\begin{equation}
+\label{eq:FDE_rewritten_with_p_deriv}
+nk(x + kpx)^{n-1} x + b^{n} = c^{n}
+\end{equation}
+or
+\begin{equation}
+\label{eq:FDE_rewritten_with_p_deriv_or}
+nk(kp + 1)^{n-1} x^{n} + b^{n} = c^{n}.
+\end{equation}
+Setting $p=1$, we get
+\begin{equation}
+\label{eq:FDE_identity}
+nk(k + 1)^{n-1} x^{n} + b^{n} = c^{n}.
+\end{equation}
+The coefficients of $x^{n}$ in (\ref{eq:FDE_identity}) and (\ref{eq:FDE_rewritten_x}) must be equal, hence
+\begin{equation}
+\label{eq:FDE_identity_a}
+nk(k + 1)^{n-1} = (k + 1)^{n}.
+\end{equation}
+Therefrom, we obtain
+\begin{equation}
+\label{eq:FDE_identity_b}
+nk(k + 1)^{n}/(k + 1) = (k + 1)^{n}
+\end{equation}
+and in this way we may write the equation for the values
+of the exponent $n$ as a function of $k$
+\begin{equation}
+n = \frac{k+1}{k}.
+\end{equation}
+
+We can now determine the admissible values for $n$ as a function of $k = 1, 2, 3,$ $\ldots, \infty$, 
+which will be $2/1, 3/2, 4/3, \ldots, 1$, respectively. 
+Equations (\ref{eq:FDE_rewritten_Y_with_q}) and (\ref{eq:FDE_rewritten_Y_with_r}) are treated in a similar fashion
+with the parameters $q$ and $r$ and partial differentiation.
+We reject all $n$ that are not natural numbers, leaving us with $n = 1$ and $n = 2$ as the only acceptable exponent values in~(\ref{eq:FDE})\@.
+
+
+%    Markov Diophantine equation
+
+\section{Markov Diophantine equation}\label{MarkovEquation}
+
+
+We write the Markov Diophantine equation \cite{Markov1879, Frobenius1913, Gyoda2022} as
+\begin{equation}
+\label{eq:MarkovDiophantineEqn}
+a^{n} + b^{n} + c^{n} = 3\mathit{abc},
+\end{equation}
+where $a, b, c, n \in \mathbb{N}$.
+Without loss of generality we rewrite (\ref{eq:MarkovDiophantineEqn}) as
+\begin{equation}
+(x + kx)^{n} + b^{n} + c^{n} = 3\mathit{abc}
+\end{equation}
+or
+\begin{equation}
+\label{eq:MDE_rewritten_x}
+(k + 1)^{n} x^{n} + b^{n} + c^{n} = 3\mathit{abc},
+\end{equation}
+where $a = x + kx$, $k \in \mathbb{N}$.
+We also have $x = \frac{1}{k+1}, \frac{2}{k+1}, \frac{3}{k+1}, \ldots$\@.
+In this way $a = 1, 2, 3, \ldots$~, as assumed in the Markov Diophantine
+equation~(\ref{eq:MarkovDiophantineEqn})\@.
+
+After introducing the real parameter $p$,
+we differentiate both sides of (\ref{eq:MDE_rewritten_with_p}) with respect to $p$
+\begin{equation}
+\label{eq:MDE_rewritten_with_p}
+(x + kpx)^{n} + b^{n}p + c^{n}p = 3\mathit{abc}p
+\end{equation}
+and we establish the admissible exponents, as in the case of Fermat Diophantine equation.
+We come to the
+conclusion that the only possible exponents in the Markov Diophantine equation~(\ref{eq:MarkovDiophantineEqn})
+are 1 and 2.
+
+The one solution for $n = 1$ of $a + b + c = 3\mathit{abc}$ and $a, b, c > 0$~is
+\begin{equation}
+1 + 1 + 1 = 3 \cdot 1 \cdot 1 \cdot 1
+\end{equation}
+
+\begin{table}[!ht]
+\caption{Example solutions of the Markov Diophantine equation for $n = 2$\@. Any triple 
+$(a, b, c)$ satisfying the Markov Diophantine equation is called a Markov triple, and the numbers are Markov numbers.}
+\label{tab:solutions}
+\vspace{0.5cm}
+\centering
+\begin{tabular}{c c c}
+\hline \hline \\ [-2.0ex]  % Space after first hline only
+$a$ & $b$ & $c$ \\[0.6ex]  % extra vertical space before next \hline
+\hline    \\[-1.5ex]  % extra vertical space before next \hline
+1 & 1 & 1 \\
+1 & 1 & 2 \\
+1 & 2 & 5 \\
+2 & 5 & 29 \\[0.6ex]  % extra vertical space before next \hline
+\hline \hline
+\end{tabular}
+\end{table}
+Some example solutions for $n = 2$ of $a^{2} + b^{2} + c^{2} = 3\mathit{abc}$ are presented in Table~\ref{tab:solutions}\@.
+They are:
+\begin{align*} 
+1^{2} + 1^{2} + 1^{2} =  1 + 1 + 1 =  3 \cdot 1 \cdot 1 \cdot 1 &= 3         \\ \newline
+1^{2} + 1^{2} + 2^{2} =  1 + 1 + 4 =  3 \cdot 1 \cdot 1 \cdot 2 &= 6         \\ \newline
+1^{2} + 2^{2} + 5^{2} =  1 + 4 + 25 = 3 \cdot 1 \cdot 2 \cdot 5 &= 30        \\ \newline
+2^{2} + 5^{2} + 29^{2} = 4 + 25 + 841 = 3 \cdot 2 \cdot 5 \cdot 29 &= 870.   
+\end{align*} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%    Catalan Diophantine equation
+
+\section{Catalan Diophantine equation}\label{CatalanEquation}
+
+
+We write the Catalan Diophantine 
+equation~\cite{Catalan1844, mihalescu2004} as
+
+
+
+\begin{equation}
+\label{eq:CatalanDiophantineEqn}
+a^{i} - b^{j} = 1,
+\end{equation}
+where $a, b, i, j \in \mathbb{Z}$ are integers greater than one.
+
+Without loss of generality we rewrite (\ref{eq:CatalanDiophantineEqn}) as
+\begin{equation}
+(x + kx)^{i} - b^{j} = 1
+\end{equation}
+or
+\begin{equation}
+\label{eq:CatalanDE_rewritten_x}
+(k+1)^{i}x^{i} - b^{j} = 1,
+\end{equation}
+where $a = x + kx$ and $k \in \mathbb N$.
+We also have $x = \frac{2}{k+1}, \frac{3}{k+1}, \ldots$~,
+thus allowing $a = 2, 3, \ldots$~, as assumed in the Catalan Diophantine
+equation~(\ref{eq:CatalanDiophantineEqn})\@.
+
+
+
+After introducing the real parameter $p$,
+we differentiate both sides of (\ref{eq:CatalanDE_rewritten_with_p}) with respect to $p$
+\begin{equation}
+\label{eq:CatalanDE_rewritten_with_p}
+(x + kpx)^{i} - b^{j}p = p
+\end{equation}
+and we determine the exponents.
+We come to the conclusion that the only admissible exponent $i$ in the Catalan Diophantine equation~(\ref{eq:CatalanDiophantineEqn})
+is equal to 2.
+
+
+
+With $i = 2$, we obtain the following Catalan Diophantine equation
+\begin{equation}
+\label{eq:CatalanDE_with_X_power_2}
+a^{2} - b^{j} = 1
+\end{equation}
+or
+\begin{equation}
+\label{eq:CatalanDE_with_X_power_2_modified}
+b^{j} = a^{2} - 1.
+\end{equation}
+Since $b > 1$, we can set $b = 2$, obtaining
+\begin{equation}
+2^{j} = a^{2} - 1.
+\end{equation}
+One can verify that for $j=3$ we have $2^{3} = 8$ and $a = 3$\@.
+Then we have the Catalan equation solution
+\begin{equation}
+a^{i} - b^{j} = 1
+\end{equation}
+$a = 3, i = 2, b = 2, j = 3$,
+which gives
+\begin{equation}
+3^{2} - 2^{3} = 1.
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusion}
+
+
+%++++++++++++++++++++++
+Using a relatively straightforward set of rewriting ru\-les for the Diophantine equations of Fermat, Markov, and
+Catalan, we were able to transform each into a form that allowed the introduction of rational parameters 
+$x, y, z$ and real parameters $p, q, r$\@. When differentiated with respect to the latter, the resulting equations gave us a way to determine the admissible values for the exponent $n$ in the Fermat and Markov, and exponents $i, j$ in Catalan Diophantine equations.
+
+
+%++++++++++++++++++++++
+
+
+
+\bibliographystyle{vancouver}
+\bibliography{FerMarCat_IJDANT_ver_007.bib}
+
+
+\end{document}
+
