@@ -1,0 +1,52 @@
+at the top of LaTeX file add the commands:
+
+
+
+
+---
+pandoc-crossref:
+  autoEqnLabels: true
+---
+
+and run
+
+
+pandoc --filter pandoc-crossref -M autoEqnLabels liczby_zespolone.tex -o output.docx
+
+
+
+
+pandoc --filter pandoc-crossref -M autoEqnLabels scriptRolle_and_LagrangeTheorem_and_L-Hopital_Rule.tex -o scriptRolle_and_LagrangeTheorem_and_L-Hopital_Rule.docx
+
+
+
+
+
+pandoc --filter pandoc-crossref -M autoEqnLabels FSConvergence_CzM_006a_PL.tex -o FSConvergence_CzM_006a_PL.docx
+
+
+
+pandoc --filter pandoc-crossref -M autoEqnLabels macierze_obrotu.tex -o macierze_obrotu.docx
+
+
+
+pandoc --filter pandoc-crossref -M autoEqnLabels macierze_obrotu_ver008.tex -o macierze_obrotu_ver008.docx
+
+macierze_obrotu
+
+
+FSConvergence_CzM_006a_PL
+oscylator_harmoniczny_prosty_z_rozwiazaniem_008
+
+
+pandoc --filter pandoc-crossref -M autoEqnLabels oscylator_harmoniczny_prosty_z_rozwiazaniem_008.tex -o oscylator_harmoniczny_prosty_z_rozwiazaniem_008.docx
+
+
+
+
+
+
+
+
+
+

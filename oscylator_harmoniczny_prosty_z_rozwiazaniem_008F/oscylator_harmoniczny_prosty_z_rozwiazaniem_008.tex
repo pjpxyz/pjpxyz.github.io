@@ -1,0 +1,368 @@
+
+\documentclass[12pt,a4paper,pl,fleqn]{article}
+
+
+% \usepackage[english,polish]{babel}                   % ostatni jezyk przewaza w opisach rozdzialow i literatury
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[toc]{appendix}
+% \usepackage[T1]{fontenc}
+
+
+
+% \documentclass[a4paper,12pt]{article}
+% \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage{lmodern}
+
+
+\setlength{\textheight}{210mm}
+\setlength{\textwidth}{145mm}
+\setlength{\parindent}{20.0mm}
+
+\renewcommand{\thesection}{\Roman{section}}
+
+\title{Równanie oscylatora harmonicznego prostego z rozwiązaniem}
+
+\author{Paweł Jan Piskorz}
+
+
+
+\date{}
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{document}
+
+
+\maketitle
+
+Rozważmy zastosowanie drugiej zasady dynamiki Newtona kiedy siła działająca
+na punkt materialny jest proporcjonalna do jego wychylenia z położenia
+równowagi i skierowana do położenia równowagi. Jako przykład rozważmy jednowymiarowy ruch
+wzdłuż osi $Ox$\@. Wówczas mamy następujące równanie ruchu Newtona
+% We will consider the application of the Newton second law when the force acting on a material point
+% is proportional to the displacement from the equilibrium point and directed
+% to the equilibrium point.    % ~\cite{kn:Guminski_Book}.
+% As an example let us consider a one dimensional motion along the $x$ axis. The Newton equation then is
+\begin{equation}
+m \ddot{x} = - k x
+\end{equation}
+gdzie $x$ jest wychyleniem, $m$ jest masą, $k$ jest stałą proporcjonalności zwaną stałą siłową natomiast
+% where $x$ is displacement, $m$ is mass, $k$ is proportionality constant, and
+\begin{equation}
+\ddot{x} = \frac{d^2 x}{d t^2}
+\end{equation}
+jest drugą pochodną po czasie $t$ wychylenia $x$ oscylatora czyli jest przyspieszeniem.
+
+Całkiem podobne równanie otrzymujemy rozważając wahadło o masie $m$ zawieszonej na długiej nierozciągliwej nici o długości $l$
+w przybliżeniu wychyleń o niewielki kąt co odpowiada wychyleniom z położenia równowagi o niewielką odległość $x$
+% is the second time $t$ derivative of the displacement, i.e.~the accelleration.
+% Quite similar equation we get when treating the long pendulum in small displacement angle approximation
+\begin{equation}
+m \ddot{x} = - m g (x / l)
+\end{equation}
+% what gives
+co daje
+\begin{equation}
+l \ddot{x} = - g x
+\end{equation}
+% where $l$ is the length of the pendulum, $g$ is the acceleration due to gravity.
+gdzie $g$ jest przyspieszeniem ziemskim.
+Wahadło o powyższym równaniu ruchu nazywamy {\em wahadłem matematycznym.}
+
+% Our goal will be to solve the equation
+Naszym celem będzie rozwiązanie równania różniczkowego rzędu drugiego o stałych współczynnikach zwanego
+{\em równaniem oscylatora harmonicznego prostego\/}
+\begin{equation}
+\label{eq:harmonic_oscillator_equation}
+m \frac{d^2 x}{d t^2} + k x = 0
+\end{equation}
+bez zgadywania rozwiązania.
+% without making any assumptions about the solution function $x$\@.    % as suggested in~\cite{kn:Romanowski_Wrona_Book}.
+% We will make assumptions only about the initial conditions.
+% The velocity $v$ of the motion is
+Uczynimy jedynie założenia dotyczące warunków początkowych.
+
+Prędkość $v$ ruchu oscylatora możemy zapisać jako
+\begin{equation}
+\dot{x} = v = \frac{d x}{d t}
+\end{equation}
+
+% We start with noticing that
+Rozpoczynamy zauważając, że
+\begin{equation}
+\frac{d^2 x}{d t^2} = \frac{d}{d t} \left( \frac{d x}{d t} \right)  =  \frac{d v}{d t}  =   
+\frac{d v}{d x} \frac{d x}{d t}
+=    \frac{d v}{d x} v                             
+\end{equation}
+\begin{equation}
+     \frac{d (v^2)}{d x}     =   2 v \frac{d v}{d x}  
+\end{equation}
+\begin{equation}
+      v \frac{d v}{d x}   =  \frac{1}{2} \frac{d (v^2)}{d x} =  \frac{d^2 x}{d t^2}      
+\end{equation}
+% The original equation (\ref{eq:harmonic_oscillator_equation}) becomes
+Wyjściowe równanie (\ref{eq:harmonic_oscillator_equation}) przekształca się w równanie
+\begin{equation}
+     m \frac{1}{2} \frac{d (v^2)}{d x} +   k x = 0
+\end{equation}
+\begin{equation}
+     d (v^2)   +   \frac{k}{m} 2 x dx = 0
+\end{equation}
+% After integration
+Po scałkowaniu powyższego równania dostajemy
+\begin{equation}
+     v^2  +  \frac{k}{m} x^2  +  C_{1}   =    0
+\end{equation}
+% where $C_{1}$ is a constant. For maximum displacement $x = x_{0}$ the velocity $v = 0$ and
+gdzie $C_{1}$ jest stałą. Dla maksymalnego wychylenia $x = x_{0}$ prędkość $v = 0$ i
+\begin{equation}
+      \frac{k}{m} x_{0}^2  +  C_{1}   =    0
+\end{equation}
+\begin{equation}
+      C_{1} = - \frac{k}{m} x_{0}^2
+\end{equation}
+% what gives
+co daje
+\begin{equation}
+      v^2  = \frac{k}{m} \left( x_{0}^2 - x^2 \right)
+\end{equation}
+\begin{equation}
+      \frac{d x}{d t}  =   \sqrt{\frac{k}{m}} x_{0} \sqrt{ 1 - \left( \frac{x}{x_{0}} \right)^2 }
+\end{equation}
+% Substituting $u = x / x_{0}$ and $dx = x_{0} du$
+Podstawiając $u = x / x_{0}$ and $dx = x_{0} du$
+\begin{equation}
+\label{eq:integration_for_arcsin}
+       \sqrt{\frac{k}{m}} \,  d t  =  \frac{d x}{ x_{0} \sqrt{ 1 - \left( x/x_{0} \right)^2 } }
+       = \frac{x_{0} du}{ x_{0} \sqrt{ 1 - \left( x/x_{0} \right)^2 } }
+       =  \frac{d u}{ \sqrt{ 1 - u^{2}} }
+\end{equation}
+% Integrating the equation (\ref{eq:integration_for_arcsin}) we receive
+Całkując równanie (\ref{eq:integration_for_arcsin}) otrzymujemy
+\begin{equation}
+    \arcsin u =  \arcsin(x/x_{0}) =  \sqrt{k/m} \,   t + C_{2}
+\end{equation}
+% and from that
+a z tego
+\begin{equation}
+    x = x_{0} \sin(\sqrt{k/m} \,   t + C_{2})
+\end{equation}
+% We may assume the that the constant $C_{2} = 0$ if for $t = 0$ the displacement $x = 0$, and our solution
+% of the equation (\ref{eq:harmonic_oscillator_equation}) is
+Możemy założyć, że stała $C_{2} = 0$ jeżeli dla $t = 0$ wychylenie $x = 0$, i naszym poszukiwanym rozwiązaniem
+równania (\ref{eq:harmonic_oscillator_equation}) jest
+\begin{equation}
+\label{eq:harmonic_oscillator_equation_solution}
+    x = x_{0} \sin(\sqrt{k/m} \, t)
+\end{equation}
+% Because of the above solution the equation (\ref{eq:harmonic_oscillator_equation}) is called
+% the equation of a harmonic oscillator.
+
+% The solution of equation (\ref{eq:harmonic_oscillator_equation})
+% is a sinusoidal function. Sinusoidal function also describes the vibration of a string e.g.~of a violin
+% or a harp string. Such vibration corresponds to a harmonic tone and therefrom comes the name harmonic oscillation.
+% Because of its solution (\ref{eq:harmonic_oscillator_equation_solution})
+% the equation (\ref{eq:harmonic_oscillator_equation}) is called
+% the equation of a harmonic oscillator.
+
+
+Rozwiązaniem równania (\ref{eq:harmonic_oscillator_equation}) oscylatora harmonicznego
+jest funkcja sinusoidalna (\ref{eq:harmonic_oscillator_equation_solution})\@. 
+Funkcja sinusoidalna opisuje również drgania strun, na przykład skrzypcowych, gitary czy harfy.
+Drgania takie odpowiadają tonom harmonicznym i stąd bierze się nazwa {\em drganie harmoniczne oscylatora.\/}
+Zasadniczo każdy punkt drgającej struny oscyluje jak oscylator harmoniczny.
+
+
+
+% Essentially, every point on a vibrating string vibrates like a harmonic oscillator.
+
+
+% From the periodicity of the sinusoidal function
+% we see then that the motion of the harmonic oscillator is periodic. Let us denote the period of the
+% motion of the harmonic oscillator by $T$. Then
+
+
+Z okresowości funkcji sinusoidalnej widzimy zatem, że ruch oscylatora harmonicznego jest okresowy.
+Oznaczmy okres ruchu oscylatora harmonicznego przez $T$\@. Wtedy
+\begin{eqnarray}
+    x(t) = x_{0} \sin(\sqrt{k/m} \, t)
+    = x_{0} \sin(\sqrt{k/m} \, t + 2\pi)  \\
+    = x_{0} \sin(\sqrt{k/m} \, ( t + T ))
+    = x_{0} \sin(\sqrt{k/m} \, t + \sqrt{k/m} \, T)  \nonumber
+\end{eqnarray}
+% and from that
+i z powyższego
+\begin{equation}
+    T \sqrt{k/m} = 2 \pi
+\end{equation}
+% with the period $T$
+mamy ruch z okresem $T$
+\begin{equation}
+    T  = 2 \pi \sqrt{m/k}
+\end{equation}
+Po czasie $T$ ta sama faza ruchu oscylatora powtarza się. Przez fazę ruchu oscylatora
+rozumiemy pewien określony stopień zaawansowania jego ruchu. Mamy na przykład fazę pełnego wychylenia w prawo,
+ fazę przejścia przez położenie równowagi z prawej strony w lewo, itp.
+
+% We notice that for the pendulum we have the period
+Zauważamy, że dla wahadła matematycznego mamy okres
+\begin{equation}
+    T  = 2 \pi \sqrt{l/g}
+\end{equation}
+
+% Frequency $\nu$ of the periodic motion denotes the number of periods per unit time
+Częstotliwość $\nu$ ruchu okresowego oznacza ilość okresów ruchu przypadających na jednostkę czasu
+\begin{equation}
+\label{eq:frequency}
+    \nu = 1/T
+\end{equation}
+Mogliśmy zapisać jak powyżej ponieważ na czas $T$ przypada dokładnie jeden pełny okres ruchu oscylatora.
+
+Częstotliwość kołowa $\omega$ ruchu okresowego to z definicji
+\begin{equation}
+\label{eq:circular_frequency}
+    \omega = 2 \pi/T
+\end{equation}
+Mamy, że
+\begin{equation}
+\label{eq:circular_frequency_explained}
+     \omega = \frac{2\pi}{T} = \sqrt{k/m}
+\end{equation}
+
+
+Często w podręcznikach równanie ruchu oscylatora harmonicznego prostego zapisane jest od razu w postaci
+\begin{equation}
+\ddot{x} = - {\omega}^{2} x
+\end{equation}
+a rozwiązanie powyższego równania to
+\begin{equation}
+x(t) = x_{0} \sin(\omega \, t)
+\end{equation}
+Prędkość oscylatora otrzymujemy z obliczenia pochodnej wychylenia po czasie
+\begin{equation}
+v(t) = \frac{d x(t)}{d t} = \frac{d}{d t} x_{0} \sin(\omega \, t) = x_{0} \omega \cos(\omega \, t) 
+= v_{0} \cos(\omega \, t)
+\end{equation}
+
+
+
+
+
+
+
+% For the harmonic oscillator
+Dla oscylatora harmonicznego prostego
+\begin{equation}
+\label{eq:frequency_of_harmonic_ooscillator}
+    \nu = \frac{1}{2 \pi} \sqrt{k/m}
+\end{equation}
+% and for the pendulum in the approximation of harmonic oscillations
+a dla wahadła matematycznego
+\begin{equation}
+\label{eq:frequency_of_pendulum}
+    \nu = \frac{1}{2 \pi} \sqrt{g/l}
+\end{equation}
+
+% So our simple harmonic oscillator problem is solved. We had to know that
+
+
+Dodatkowo rozważmy energię ruchu oscylatora harmonicznego. Energia ta jest sumą energii kinetycznej
+\begin{equation}
+    \frac{1}{2} m v^{2} 
+\end{equation}
+oraz energii potencjalnej
+\begin{equation}
+    \frac{1}{2} k x^{2} 
+\end{equation}
+Energię potencjalną ruchu oscylatora oblicza się z całki pracy
+\begin{equation}
+    -\int_{0}^{x} \vec{F} \cdot \vec{i} ds =
+    -\int_{0}^{x} -ks \, ds =  \frac{1}{2} k x^{2}
+\end{equation}
+gdzie $\vec{F}$ jest wektorem siły działającej na punkt materialny oscylatora, $s$ jest przesunięciem
+natomiast $\vec{i}$ jest wersorem osi $Ox$ układu współrzędnych.
+
+Energia całkowita ruchu oscylatora harmonicznego jest sumą jego e\-ner\-gii kinetycznej oraz potencjalnej
+\begin{eqnarray}
+    \frac{1}{2} m v^{2} + \frac{1}{2} k x^{2} =                     \\ \nonumber
+  = \frac{1}{2} m v_{0}^{2} \cos^{2}(\omega \, t) +
+    \frac{1}{2} k x_{0}^{2} \sin^{2}(\omega \, t)
+\end{eqnarray}
+Ponieważ $v_{0} = x_{0} \omega$ to 
+\begin{equation}
+m v_{0}^{2} = m x_{0}^{2} \omega^{2} = m x_{0}^{2} \frac{k}{m} = k x_{0}^{2}
+\end{equation}
+i otrzymujemy, że energia całkowita $E$ oscylatora to
+\begin{equation}
+E = \frac{1}{2} m \frac{k}{m} x_{0}^{2} \cos^{2}(\omega \, t) + \frac{1}{2} k x_{0}^{2} \sin^{2}(\omega \, t)
+=
+\frac{1}{2} k x_{0}^{2}
+\end{equation}
+
+Zatem nasz problem znalezienia rozwiązania równania ruchu os\-cy\-la\-to\-ra
+harmonicznego prostego został rozwiązany. Jedynie musieliśmy znać całkę
+\begin{equation}
+\label{eq:integral_for_arcsin}
+    \int \frac{d u}{ \sqrt{ 1 - u^{2}} } = \arcsin u + C
+\end{equation}
+% where $C$ is constant. Let us prove the above equation (\ref{eq:integral_for_arcsin}) by asking how to compute
+% the derivative of the $\arcsin$ function.
+gdzie $C$ oznacza stałą. Udowodnijmy powyższe równanie (\ref{eq:integral_for_arcsin}) zadając pytanie,
+w jaki sposób obliczyć pochodną funkcji $\arcsin u$\@.
+
+% Let
+Niech
+\begin{equation}
+                y = \sin x
+\end{equation}
+\begin{equation}
+                \frac{d y}{d x} = \frac{d \sin x}{d x} = \cos x = \sqrt{1 - \sin^2 x}
+\end{equation}
+% With     
+Z 
+$y = \sin x$  i   $x = \arcsin y$ stosujemy wzór na obliczenie pochodnej funkcji odwrotnej
+% we use the formula to calculate the derivative of the inverse function
+\begin{equation}
+                \frac{d x}{d y} =  \frac{1}{\sqrt{1 - \sin^2 x}} = \frac{d \arcsin y}{d y}    =   \frac{1}{\sqrt{1 - y^2}}
+\end{equation}
+% what is equivalent to
+co jest równoważne
+\begin{equation}
+\label{eq:arcsin_derivative}
+                \frac{d \arcsin u}{d u} = \frac{1}{\sqrt{1 - u^2}}
+\end{equation}
+% and the equation (\ref{eq:integral_for_arcsin}) can be proven
+% after integrating (\ref{eq:arcsin_derivative})
+i równanie (\ref{eq:integral_for_arcsin}) może być dowiedzione
+po scałkowaniu równania (\ref{eq:arcsin_derivative})
+\begin{equation}
+\label{eq:arcsin_derivative_integration}
+                \int \frac{1}{\sqrt{1 - u^2}} \, du
+                =
+                \int d \, \arcsin u
+                =
+                \arcsin u + C
+\end{equation}
+
+%8888888888888888888888888888888888888888888888888888888888888888
+
+% \begin{thebibliography}{99}
+% \bibitem{kn:Guminski_Book} Guminski,~K.\
+%                           (1964) {\em Elementy chemii teoretycznej (Elements of Theoretical Chemistry)\/} Panstwowe Wydawnictwo Naukowe (State Scientific Publishing), Warszawa
+% \bibitem{kn:Romanowski_Wrona_Book} Romanowski,~S., Wrona,~W.\
+%                           (1967) {\em Matematyka wyzsza dla studiow technicznych (Higher Mathematics for Technical Studies)\/} Panstwowe Wydawnictwo Naukowe (State Scientific Publishing), Warszawa
+
+% \end{thebibliography}
+
+% \subsection*{}
+
+% Pawel Jan Piskorz (paweljanpiskorz@gmail.com)
+
+\end{document}
+
+
+
+
